@@ -51,14 +51,13 @@ theme: lemon
 
 ## Juypter Notebooks
 
-* für die LV arbeiten mit interaktiven Notebooks, die Ihnen [hier]() zur Verfügung stehen
+* für die LV arbeiten mit interaktiven Notebooks, die Ihnen [hier](https://github.com/jhumci/2024_SoSe_BioInformatik/tree/main/docs) zur Verfügung stehen
+* Sie erkennen die Dateien an der Endung `*.ipynb`
 * der Code kann über Zellen im Browser eingegeben werden
 
 ![bg right h:350](images/HelloWorldNotebook.png)
 
----
 
-![bg  h:550](images/HelloWorldNotebook.png)
 
 ---
 
@@ -78,15 +77,15 @@ theme: lemon
 #### Ohne Google Account
 
 - Unter folgenden Link können Sie die Notebooks ebenfalls ausführen. Allerdings gibt es hier keine komfortable Möglichkeit Ihre Ergebnisse zu speichern
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jhumci/SBT_GID/HEAD) 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jhumci/2024_SoSe_BioInformatik/tree/main/docs/HEAD) 
 - Alternativ können Sie die Notebooks lokal ausführen indem Sie das Paket [Anaconda](https://www.youtube.com/watch?v=h1sAzPojKMg) installieren
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jhumci/SBT_GID/tree/main)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jhumci/2024_SoSe_BioInformatik/tree/main/docs)
 
 ---
 
 #### Öffnen eines bestehenden Notebooks
 
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jhumci/SBT_GID/tree/main): Laden Sie auf Github die `*.ipynb`-Datei herunter und merken Sie sich den Speicherort
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jhumci/2024_SoSe_BioInformatik/tree/main/docs): Laden Sie auf Github die `*.ipynb`-Datei herunter und merken Sie sich den Speicherort
 
 ![](images/DoewnloadNotebook.png)
 
@@ -99,9 +98,18 @@ theme: lemon
 
 - Wählen Sie im Menü: `Datei/Notebook öffnen/` 
 - Im öffnenden Fenster: `GitHub`, das Pop-Up zur Anmeldung bei GiHub können Sie abbrechen
-- Fügen Sie den Link zur Datei ein, die Sie öffnen möchten: z.B. -`https://github.com/jhumci/SBT_GID/blob/main/SBT_1_Einf%C3%BChrungProgrammierung.ipynb`
+- Fügen Sie den Link zur Datei ein, die Sie öffnen möchten: z.B. `https://github.com/jhumci/2024_SoSe_BioInformatik/blob/main/docs/1_variablen_und_operationen.ipynb`
 - Wählen Sie die genaue Datei aus
 - Speichern Sie eine Kopie über `Datei/Speichern/` 
 
 
 ![bg right:40% h:300](images/Repooeffenen.png)
+
+---
+
+#### Herunterladen eines bestehenden Notebooks
+
+- Stellen Sie zunächst sicher, dass alles fehlerfrei läuft und die Ergebnisse wie gewünscht vorliegen
+- Wählen Sie hier im Menü: `Laufzeit/Alle Ausführen`
+- Nun können Sie das Notebook herunterladen
+- Wählen Sie im Menü: `Datei/Herunterladen/ipynb`
