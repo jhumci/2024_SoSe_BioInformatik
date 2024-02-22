@@ -1,0 +1,20 @@
+site_name: Bio-Informatik
+
+
+site_author: Julian Huber
+# Navigation menu
+nav:
+  - 'Übersicht' : index.md
+  - '1 Variablen und Operationen' : 1_variablen_und_operationen.ipynb
+  - '2 Listen und Kontrollstrukturen' : 2_listen_und_kontrollstrukturen.ipynb
+  - '3 Funktionen und File Handling' : 3_funktionen.ipynb
+  - '4 Statistische Auswertung und Plotting' : 4_statistik_und_plots.ipynb
+  
+
+theme:
+  name: readthedocs
+  
+plugins:
+    - mkdocs-jupyter
+
+dev_addr: '0.0.0.0:7000'
