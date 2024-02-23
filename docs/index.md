@@ -19,11 +19,12 @@ theme: lemon
 
 ## Philosophie der Lehrveranstaltung
 
-> Künstliche Intelligenz macht Programmierer:in überflüssig?
+> nobody has to program [...] everybody in the world is now a programmer
 
+[Jen-Hsun Huang CEO of Nvidia](https://www.youtube.com/watch?v=iUOrH2FJKfo&t=1090s)
 
 * Tatsächlich erleichtern Werkzeuge wie [ChatGPT](https://chat.openai.com/) und [GitHub Copilot](https://github.com/features/copilot) das Programmieren heute schon enorm und werden in Zukunft noch besser
-* Aktuell ist es jedoch noch so, dass Interessante Ergebnisse nur durch die Kombination von Fachwissen und Programmierkenntnissen erzielt werden können
+* Aktuell ist es jedoch noch so, dass interessante Ergebnisse nur durch die Kombination von Fachwissen und Programmierkenntnissen erzielt werden können
 * Nie war er so einfach, wie heute programmieren zu lernen:
     * KI-Programme helfen bei der Fehlersuche
     * KI-Programme antworten auf fragen
