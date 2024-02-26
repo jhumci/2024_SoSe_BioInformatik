@@ -55,8 +55,36 @@
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Statistik und Plots</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#pandas-und-dataframes">Pandas und Dataframes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#einlesen-von-tabellen">Einlesen von Tabellen</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#aufgabe-finden-sie-den-schwersten-pinguin">✍️ Aufgabe: Finden Sie den schwersten Pinguin</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#filtern">Filtern</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#statistische-funktionen">Statistische Funktionen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gruppieren-von-daten">Gruppieren von Daten</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#aufgabe-berechnen-sie-das-durchschnittsgewicht-der-pinguine-der-spezies-adelie-und-gruppiert-nach-geschlecht-und-ernahrungsgewohnheiten">✍️ Aufgabe: Berechnen Sie das Durchschnittsgewicht der Pinguine der Spezies "Adelie" und gruppiert nach Geschlecht und Ernährungsgewohnheiten.</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#plots-mit-seaborn">Plots mit seaborn</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#umgang-mit-ki-unterstutzung">🤖 Umgang mit KI-Unterstützung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#promts-fur-chatgpt">Promts für ChatGPT</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unterstutzung-durch-autocomplete">Unterstützung durch Autocomplete</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#projekt">🏆 Projekt</a>
     </li>
     </ul>
                 </li>
@@ -525,7 +553,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="statistik-und-plots">Statistik und Plots<a class="anchor-link" href="#statistik-und-plots">¶</a></h1>
+<h1 id="statistik-und-plots">Statistik und Plots<a class="anchor-link" href="#statistik-und-plots">¶</a></h1><p>In Ihren Laboren und Abschlussarbeiten werden Sie oft mit tabularen Daten arbeiten. In diesem Notebook werden wir uns mit der Analyse und Visualisierung von Daten beschäftigen. Wir werden die Bibliotheken <code>pandas</code> und <code>seaborn</code> verwenden, um Daten zu analysieren und zu visualisieren.</p>
+<p>In diesem Notebook werden Sie eine vielzahl von speziellen Funktionen kennenlernen, die Ihnen helfen, Daten zu analysieren und zu visualisieren. Vielleicht werden Sie sich fragen, wie sie sich diese Funktionen alle merken sollen. Das ist gar nicht nötig. Sie können sich immer an die Dokumentation der Bibliotheken oder KI-Unterstützung wenden, um die Funktionen zu finden, die Sie benötigen. Dafür brauchen Sie aber eine Vorstellung davon, was möglich ist. Das ist der Zweck dieses Notebooks.</p>
 </div>
 </div>
 </div>
@@ -536,11 +565,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="pandas-und-dataframes">Pandas und Dataframes<a class="anchor-link" href="#pandas-und-dataframes">¶</a></h2><ul>
-<li>Csv-Dateien lesen und schreiben</li>
-<li>Statistische Funktionen</li>
-<li>LateX-Tabellen</li>
-</ul>
+<h2 id="pandas-und-dataframes">Pandas und Dataframes<a class="anchor-link" href="#pandas-und-dataframes">¶</a></h2><p>Tabulare Daten begegnen uns in vielen Bereichen. Sie können in Form von Excel-Tabellen, CSV-Dateien oder Datenbanken vorliegen. CSV-Dateien können z.B. aussehen, wie das folgende <a href="docs%5Cdata%5Cpalmerpenguins_extended.csv">Beispiel</a></p>
+<pre><code class="language-csv">csv
+species,island,bill_length_mm,bill_depth_mm,flipper_length_mm,body_mass_g,sex,diet,life_stage,health_metrics,year
+Adelie,Biscoe,53.4,17.8,219.0,5687.0,female,fish,adult,overweight,2021
+Adelie,Biscoe,49.3,18.1,245.0,6811.0,female,fish,adult,overweight,2021
+Adelie,Biscoe,55.7,16.6,226.0,5388.0,female,fish,adult,overweight,2021
+</code></pre>
 </div>
 </div>
 </div>
@@ -551,6 +582,164 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="einlesen-von-tabellen">Einlesen von Tabellen<a class="anchor-link" href="#einlesen-von-tabellen">¶</a></h3><p>Tabulare Daten können wir am besten mit einem <a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html">pandas-Dataframe</a> verarbeiten. Ein Dataframe ist eine zweidimensionale Datenstruktur, die Daten in Zeilen und Spalten organisiert. Wir können Daten aus verschiedenen Quellen wie CSV-Dateien, Excel-Tabellen oder Datenbanken in ein Pandas-Dataframe einlesen.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-1">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Da wird pandas öfter verwendet, deshalb importieren wir es hier mit einer Abkürzung pd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Hier lesen wir die Daten ein</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/palmerpenguins_extended.csv'</span><span class="p">)</span>
+
+<span class="c1"># Hier schauen wir uns die ersten 5 Zeilen an</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-1"># Da wird pandas öfter verwendet, deshalb importieren wir es hier mit einer Abkürzung pd
+import pandas as pd
+
+# Hier lesen wir die Daten ein
+df = pd.read_csv('data/palmerpenguins_extended.csv')
+
+# Hier schauen wir uns die ersten 5 Zeilen an
+df.head()</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>species</th>
+<th>island</th>
+<th>bill_length_mm</th>
+<th>bill_depth_mm</th>
+<th>flipper_length_mm</th>
+<th>body_mass_g</th>
+<th>sex</th>
+<th>diet</th>
+<th>life_stage</th>
+<th>health_metrics</th>
+<th>year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>53.4</td>
+<td>17.8</td>
+<td>219.0</td>
+<td>5687.0</td>
+<td>female</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>49.3</td>
+<td>18.1</td>
+<td>245.0</td>
+<td>6811.0</td>
+<td>female</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>55.7</td>
+<td>16.6</td>
+<td>226.0</td>
+<td>5388.0</td>
+<td>female</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>38.0</td>
+<td>15.6</td>
+<td>221.0</td>
+<td>6262.0</td>
+<td>female</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>60.7</td>
+<td>17.9</td>
+<td>177.0</td>
+<td>4811.0</td>
+<td>female</td>
+<td>fish</td>
+<td>juvenile</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -561,7 +750,2351 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="plots-mit-seaborn">Plots mit <code>seaborn</code><a class="anchor-link" href="#plots-mit-seaborn">¶</a></h2>
+<p>Das <code>shape</code> Attribut gibt uns die Anzahl der Zeilen und Spalten zurück. In diesem Fall haben wir 344 Zeilen und 17 Spalten.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-2">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-2">df.shape</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>(3430, 11)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Wenn wir uns für einzelne Spalten interessieren, können wir diese mit dem Namen der Spalte auswählen. Wie beim Index von Listen oder Schlüssel von Dictionaries, können wir auf die Spalten eines Dataframes mit eckigen Klammern zugreifen. In diesem Fall wählen wir die Spalte <code>body_mass_g</code> aus.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-3">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"body_mass_g"</span><span class="p">]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-3">df["body_mass_g"]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>0       5687.0
+1       6811.0
+2       5388.0
+3       6262.0
+4       4811.0
+         ...  
+3425    6447.0
+3426    6872.0
+3427    7409.0
+3428    6491.0
+3429    6835.0
+Name: body_mass_g, Length: 3430, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Mehre Spalten können wir auswählen, indem wir eine Liste von Spaltennamen in die eckigen Klammern schreiben. In diesem Fall wählen wir die Spalten <code>species</code>, <code>island</code> und <code>body_mass_g</code> aus.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [62]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-4">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">"body_mass_g"</span><span class="p">,</span> <span class="s2">"species"</span><span class="p">,</span><span class="s2">"island"</span><span class="p">]]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-4">df[["body_mass_g", "species","island"]]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[62]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>body_mass_g</th>
+<th>species</th>
+<th>island</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>5687.0</td>
+<td>Adelie</td>
+<td>Biscoe</td>
+</tr>
+<tr>
+<th>1</th>
+<td>6811.0</td>
+<td>Adelie</td>
+<td>Biscoe</td>
+</tr>
+<tr>
+<th>2</th>
+<td>5388.0</td>
+<td>Adelie</td>
+<td>Biscoe</td>
+</tr>
+<tr>
+<th>3</th>
+<td>6262.0</td>
+<td>Adelie</td>
+<td>Biscoe</td>
+</tr>
+<tr>
+<th>4</th>
+<td>4811.0</td>
+<td>Adelie</td>
+<td>Biscoe</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>3425</th>
+<td>6447.0</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+</tr>
+<tr>
+<th>3426</th>
+<td>6872.0</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+</tr>
+<tr>
+<th>3427</th>
+<td>7409.0</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+</tr>
+<tr>
+<th>3428</th>
+<td>6491.0</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+</tr>
+<tr>
+<th>3429</th>
+<td>6835.0</td>
+<td>Gentoo</td>
+<td>Biscoe</td>
+</tr>
+</tbody>
+</table>
+<p>3430 rows × 3 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Zeilen können Sie über den Index auswählen. Der Index die sie Spalte, die jeder Zeile einen Namen gibt. In unserem Fall sind dies sie Zahlen von 0 bis 3430. Wir können auch Zeilen über den Index auswählen, indem wir die Methode <code>loc</code> verwenden, wie wie der Zugriff auf den Index in Listen funktioniert. In diesem Fall wählen wir die Zeilen 0 bis 3 aus.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-5">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-5">df.loc[0:3]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>species</th>
+<th>island</th>
+<th>bill_length_mm</th>
+<th>bill_depth_mm</th>
+<th>flipper_length_mm</th>
+<th>body_mass_g</th>
+<th>sex</th>
+<th>diet</th>
+<th>life_stage</th>
+<th>health_metrics</th>
+<th>year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>53.4</td>
+<td>17.8</td>
+<td>219.0</td>
+<td>5687.0</td>
+<td>female</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>49.3</td>
+<td>18.1</td>
+<td>245.0</td>
+<td>6811.0</td>
+<td>female</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>55.7</td>
+<td>16.6</td>
+<td>226.0</td>
+<td>5388.0</td>
+<td>female</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>38.0</td>
+<td>15.6</td>
+<td>221.0</td>
+<td>6262.0</td>
+<td>female</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h5 id="aufgabe-finden-sie-den-schwersten-pinguin">✍️ Aufgabe: Finden Sie den schwersten Pinguin<a class="anchor-link" href="#aufgabe-finden-sie-den-schwersten-pinguin">¶</a></h5><p><img alt="" src="images/image.png"/></p>
+<p>Hierzu müssen Sie zunächst die Spalte <code>body_mass_g</code> auswählen und dann die Methode <code>sort_values(&lt;column_name&gt;)</code> verwenden, der Sie den Namen der Spalte übergeben nach der Sie sortieren möchten. Die Methode <code>sort_values</code> gibt ein neues Dataframe zurück, das die sortierten Werte enthält. Sie können dann die Methoden <code>head()</code> und <code>tail()</code> verwenden, um die ersten und letzten Zeilen des Dataframes zu erhalten.</p>
+<p>What is his/her favorite food?</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-6">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-6"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-7">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'body_mass_g'</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-7">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
+
+df.sort_values('body_mass_g').tail(1)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>species</th>
+<th>island</th>
+<th>bill_length_mm</th>
+<th>bill_depth_mm</th>
+<th>flipper_length_mm</th>
+<th>body_mass_g</th>
+<th>sex</th>
+<th>diet</th>
+<th>life_stage</th>
+<th>health_metrics</th>
+<th>year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1561</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>67.4</td>
+<td>20.8</td>
+<td>244.0</td>
+<td>10549.0</td>
+<td>male</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2023</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-8">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'body_mass_g'</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="s2">"diet"</span><span class="p">]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-8">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
+
+df.sort_values('body_mass_g').tail(1)["diet"]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>1561    fish
+Name: diet, dtype: object</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="filtern">Filtern<a class="anchor-link" href="#filtern">¶</a></h4><p>Häufig wollen wir nicht den ganzen Datenbestand sehen, sondern nur bestimmte Einträge, die verschiedene Bedingungen erfüllen. Hierzu können wir die Methode <code>query</code> verwenden. Die Methode <code>query</code> nimmt einen String als Argument, der die Bedingungen enthält, die die Einträge erfüllen müssen.</p>
+<p>Wenn wir nun eine Liste vor uns hätten könnten wir uns mit einem einfachen <code>for</code>-Loop und einer überprüfung der Bedingung die weiblichen Pinguine ausgeben lassen.</p>
+<p>Das Paket <code>pandas</code> bietet uns hierfür verschiedene Methoden an. Eine davon ist die Methode <code>query</code>. Diese Methode nimmt einen String als Argument, der die Bedingungen enthält, die die Einträge erfüllen müssen.</p>
+<p>In diesem Fall wählen wir die Einträge aus, bei denen die Spalte <code>body_mass_g</code> größer als 6000 ist.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [66]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-9">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'body_mass_g &gt; 6000'</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-9">df.query('body_mass_g &gt; 6000')</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[66]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>species</th>
+<th>island</th>
+<th>bill_length_mm</th>
+<th>bill_depth_mm</th>
+<th>flipper_length_mm</th>
+<th>body_mass_g</th>
+<th>sex</th>
+<th>diet</th>
+<th>life_stage</th>
+<th>health_metrics</th>
+<th>year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>49.3</td>
+<td>18.1</td>
+<td>245.0</td>
+<td>6811.0</td>
+<td>female</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>38.0</td>
+<td>15.6</td>
+<td>221.0</td>
+<td>6262.0</td>
+<td>female</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>66.1</td>
+<td>20.8</td>
+<td>246.0</td>
+<td>6653.0</td>
+<td>male</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>61.4</td>
+<td>19.9</td>
+<td>270.0</td>
+<td>6722.0</td>
+<td>male</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>54.9</td>
+<td>22.3</td>
+<td>230.0</td>
+<td>6494.0</td>
+<td>male</td>
+<td>fish</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>3425</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>44.0</td>
+<td>20.4</td>
+<td>252.0</td>
+<td>6447.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3426</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>54.5</td>
+<td>25.2</td>
+<td>245.0</td>
+<td>6872.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3427</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>51.4</td>
+<td>20.4</td>
+<td>258.0</td>
+<td>7409.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3428</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>55.9</td>
+<td>20.5</td>
+<td>247.0</td>
+<td>6491.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3429</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>43.9</td>
+<td>22.9</td>
+<td>206.0</td>
+<td>6835.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2025</td>
+</tr>
+</tbody>
+</table>
+<p>624 rows × 11 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Hierbei können wir auch eine Logisches und oder oder verwenden:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-10">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'body_mass_g &gt; 6000 and diet == "squid"'</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-10">df.query('body_mass_g &gt; 6000 and diet == "squid"')</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[67]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>species</th>
+<th>island</th>
+<th>bill_length_mm</th>
+<th>bill_depth_mm</th>
+<th>flipper_length_mm</th>
+<th>body_mass_g</th>
+<th>sex</th>
+<th>diet</th>
+<th>life_stage</th>
+<th>health_metrics</th>
+<th>year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>105</th>
+<td>Adelie</td>
+<td>Dream</td>
+<td>43.6</td>
+<td>18.6</td>
+<td>208.0</td>
+<td>6896.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>106</th>
+<td>Adelie</td>
+<td>Dream</td>
+<td>42.1</td>
+<td>20.2</td>
+<td>240.0</td>
+<td>6157.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>107</th>
+<td>Adelie</td>
+<td>Dream</td>
+<td>37.7</td>
+<td>23.8</td>
+<td>214.0</td>
+<td>6280.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>225</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>53.4</td>
+<td>23.4</td>
+<td>221.0</td>
+<td>7663.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>351</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>46.8</td>
+<td>24.8</td>
+<td>248.0</td>
+<td>7400.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>353</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>51.0</td>
+<td>18.8</td>
+<td>237.0</td>
+<td>6788.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>354</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>51.6</td>
+<td>22.9</td>
+<td>248.0</td>
+<td>6283.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>355</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>45.6</td>
+<td>21.9</td>
+<td>256.0</td>
+<td>6805.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2021</td>
+</tr>
+<tr>
+<th>462</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>39.2</td>
+<td>17.3</td>
+<td>249.0</td>
+<td>6175.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2022</td>
+</tr>
+<tr>
+<th>648</th>
+<td>Adelie</td>
+<td>Torgensen</td>
+<td>43.6</td>
+<td>16.7</td>
+<td>217.0</td>
+<td>6090.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2022</td>
+</tr>
+<tr>
+<th>650</th>
+<td>Adelie</td>
+<td>Torgensen</td>
+<td>41.9</td>
+<td>21.7</td>
+<td>239.0</td>
+<td>6326.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2022</td>
+</tr>
+<tr>
+<th>771</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>31.6</td>
+<td>19.0</td>
+<td>223.0</td>
+<td>6071.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2022</td>
+</tr>
+<tr>
+<th>772</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>42.1</td>
+<td>22.3</td>
+<td>253.0</td>
+<td>6180.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2022</td>
+</tr>
+<tr>
+<th>774</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>44.6</td>
+<td>23.3</td>
+<td>234.0</td>
+<td>6403.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2022</td>
+</tr>
+<tr>
+<th>1003</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>40.7</td>
+<td>21.1</td>
+<td>226.0</td>
+<td>6668.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2022</td>
+</tr>
+<tr>
+<th>1010</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>44.8</td>
+<td>22.1</td>
+<td>254.0</td>
+<td>6786.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2022</td>
+</tr>
+<tr>
+<th>1011</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>40.1</td>
+<td>20.7</td>
+<td>257.0</td>
+<td>8559.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2022</td>
+</tr>
+<tr>
+<th>1013</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>55.5</td>
+<td>21.3</td>
+<td>242.0</td>
+<td>6987.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2022</td>
+</tr>
+<tr>
+<th>1211</th>
+<td>Adelie</td>
+<td>Dream</td>
+<td>31.9</td>
+<td>17.4</td>
+<td>229.0</td>
+<td>6876.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2023</td>
+</tr>
+<tr>
+<th>1458</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>46.0</td>
+<td>22.0</td>
+<td>258.0</td>
+<td>6096.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2023</td>
+</tr>
+<tr>
+<th>1459</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>44.4</td>
+<td>22.6</td>
+<td>207.0</td>
+<td>7135.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2023</td>
+</tr>
+<tr>
+<th>1462</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>47.2</td>
+<td>20.0</td>
+<td>246.0</td>
+<td>7485.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2023</td>
+</tr>
+<tr>
+<th>1695</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>38.4</td>
+<td>22.5</td>
+<td>207.0</td>
+<td>6130.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2023</td>
+</tr>
+<tr>
+<th>1697</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>52.3</td>
+<td>23.4</td>
+<td>242.0</td>
+<td>6200.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2023</td>
+</tr>
+<tr>
+<th>1700</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>57.1</td>
+<td>20.8</td>
+<td>218.0</td>
+<td>6399.0</td>
+<td>male</td>
+<td>squid</td>
+<td>juvenile</td>
+<td>overweight</td>
+<td>2023</td>
+</tr>
+<tr>
+<th>1703</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>58.0</td>
+<td>20.8</td>
+<td>253.0</td>
+<td>7819.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2023</td>
+</tr>
+<tr>
+<th>1706</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>48.5</td>
+<td>23.9</td>
+<td>240.0</td>
+<td>6652.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2023</td>
+</tr>
+<tr>
+<th>1707</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>58.8</td>
+<td>23.4</td>
+<td>226.0</td>
+<td>6762.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2023</td>
+</tr>
+<tr>
+<th>1859</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>47.2</td>
+<td>18.3</td>
+<td>190.0</td>
+<td>6216.0</td>
+<td>male</td>
+<td>squid</td>
+<td>juvenile</td>
+<td>overweight</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>1985</th>
+<td>Adelie</td>
+<td>Dream</td>
+<td>46.1</td>
+<td>18.8</td>
+<td>254.0</td>
+<td>6131.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>2273</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>40.2</td>
+<td>20.8</td>
+<td>235.0</td>
+<td>6246.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>2275</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>45.9</td>
+<td>20.7</td>
+<td>233.0</td>
+<td>6448.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>2573</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>43.4</td>
+<td>20.9</td>
+<td>215.0</td>
+<td>6578.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>2574</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>40.6</td>
+<td>18.3</td>
+<td>197.0</td>
+<td>6588.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>2575</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>42.2</td>
+<td>20.0</td>
+<td>248.0</td>
+<td>7068.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>2578</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>59.1</td>
+<td>19.4</td>
+<td>232.0</td>
+<td>6590.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>2582</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>56.2</td>
+<td>23.2</td>
+<td>244.0</td>
+<td>6834.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>2584</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>55.6</td>
+<td>23.0</td>
+<td>227.0</td>
+<td>8445.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>2585</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>37.4</td>
+<td>24.1</td>
+<td>231.0</td>
+<td>6664.0</td>
+<td>male</td>
+<td>squid</td>
+<td>juvenile</td>
+<td>overweight</td>
+<td>2024</td>
+</tr>
+<tr>
+<th>2718</th>
+<td>Adelie</td>
+<td>Biscoe</td>
+<td>45.4</td>
+<td>18.6</td>
+<td>235.0</td>
+<td>6317.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>2965</th>
+<td>Adelie</td>
+<td>Torgensen</td>
+<td>36.0</td>
+<td>18.1</td>
+<td>221.0</td>
+<td>6574.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>2966</th>
+<td>Adelie</td>
+<td>Torgensen</td>
+<td>42.8</td>
+<td>18.1</td>
+<td>235.0</td>
+<td>6636.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3101</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>40.4</td>
+<td>20.4</td>
+<td>233.0</td>
+<td>6075.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3104</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>56.2</td>
+<td>22.8</td>
+<td>220.0</td>
+<td>7131.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3105</th>
+<td>Chinstrap</td>
+<td>Dream</td>
+<td>47.0</td>
+<td>18.8</td>
+<td>262.0</td>
+<td>6768.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3413</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>39.9</td>
+<td>22.2</td>
+<td>216.0</td>
+<td>6251.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3414</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>42.4</td>
+<td>20.9</td>
+<td>207.0</td>
+<td>6185.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3417</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>43.6</td>
+<td>24.2</td>
+<td>231.0</td>
+<td>6203.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3418</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>51.4</td>
+<td>23.0</td>
+<td>197.0</td>
+<td>6793.0</td>
+<td>female</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3420</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>38.4</td>
+<td>19.7</td>
+<td>237.0</td>
+<td>6481.0</td>
+<td>male</td>
+<td>squid</td>
+<td>juvenile</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3422</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>48.7</td>
+<td>18.3</td>
+<td>243.0</td>
+<td>6643.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3423</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>47.2</td>
+<td>18.7</td>
+<td>272.0</td>
+<td>9440.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3424</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>39.6</td>
+<td>21.7</td>
+<td>265.0</td>
+<td>7230.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3425</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>44.0</td>
+<td>20.4</td>
+<td>252.0</td>
+<td>6447.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3426</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>54.5</td>
+<td>25.2</td>
+<td>245.0</td>
+<td>6872.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3427</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>51.4</td>
+<td>20.4</td>
+<td>258.0</td>
+<td>7409.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>overweight</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3428</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>55.9</td>
+<td>20.5</td>
+<td>247.0</td>
+<td>6491.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2025</td>
+</tr>
+<tr>
+<th>3429</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>43.9</td>
+<td>22.9</td>
+<td>206.0</td>
+<td>6835.0</td>
+<td>male</td>
+<td>squid</td>
+<td>adult</td>
+<td>healthy</td>
+<td>2025</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h5 id="aufgabe-finden-sie-den-schwersten-weiblichen-pinguin">✍️ Aufgabe: Finden Sie den schwersten weiblichen Pinguin<a class="anchor-link" href="#aufgabe-finden-sie-den-schwersten-weiblichen-pinguin">¶</a></h5><p>Diese soll sich noch in der Lebensstufe <code>"juvenile"</code> befinden.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-11">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-11"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [68]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-12">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'sex == "female" and life_stage == "juvenile"'</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'body_mass_g'</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-12">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
+
+df.query('sex == "female" and life_stage == "juvenile"').sort_values('body_mass_g').tail(1)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[68]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>species</th>
+<th>island</th>
+<th>bill_length_mm</th>
+<th>bill_depth_mm</th>
+<th>flipper_length_mm</th>
+<th>body_mass_g</th>
+<th>sex</th>
+<th>diet</th>
+<th>life_stage</th>
+<th>health_metrics</th>
+<th>year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>2335</th>
+<td>Gentoo</td>
+<td>Biscoe</td>
+<td>52.4</td>
+<td>18.2</td>
+<td>198.0</td>
+<td>7231.0</td>
+<td>female</td>
+<td>fish</td>
+<td>juvenile</td>
+<td>overweight</td>
+<td>2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="statistische-funktionen">Statistische Funktionen<a class="anchor-link" href="#statistische-funktionen">¶</a></h3><p>Wir können So sehr schnell <a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html">statistische Funktionen</a> auf die Daten anwenden. Mit der <code>describe</code> Funktion erhalten wir eine Zusammenfassung der statistischen Kennzahlen für die numerischen Spalten.</p>
+<p>Die umfassendste Funktion is <code>describe()</code>. Diese Funktion gibt uns eine Zusammenfassung der statistischen Kennzahlen für die numerischen Spalten.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [69]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-13">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-13">df.describe()</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[69]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>bill_length_mm</th>
+<th>bill_depth_mm</th>
+<th>flipper_length_mm</th>
+<th>body_mass_g</th>
+<th>year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>count</th>
+<td>3430.000000</td>
+<td>3430.000000</td>
+<td>3430.000000</td>
+<td>3430.000000</td>
+<td>3430.000000</td>
+</tr>
+<tr>
+<th>mean</th>
+<td>38.529825</td>
+<td>18.447143</td>
+<td>207.028863</td>
+<td>4834.710496</td>
+<td>2023.348397</td>
+</tr>
+<tr>
+<th>std</th>
+<td>13.175171</td>
+<td>2.774428</td>
+<td>28.944765</td>
+<td>1311.091310</td>
+<td>1.313797</td>
+</tr>
+<tr>
+<th>min</th>
+<td>13.600000</td>
+<td>9.100000</td>
+<td>140.000000</td>
+<td>2477.000000</td>
+<td>2021.000000</td>
+</tr>
+<tr>
+<th>25%</th>
+<td>28.900000</td>
+<td>16.600000</td>
+<td>185.000000</td>
+<td>3843.500000</td>
+<td>2022.000000</td>
+</tr>
+<tr>
+<th>50%</th>
+<td>34.500000</td>
+<td>18.400000</td>
+<td>203.000000</td>
+<td>4633.500000</td>
+<td>2024.000000</td>
+</tr>
+<tr>
+<th>75%</th>
+<td>46.600000</td>
+<td>20.300000</td>
+<td>226.000000</td>
+<td>5622.000000</td>
+<td>2024.000000</td>
+</tr>
+<tr>
+<th>max</th>
+<td>88.200000</td>
+<td>27.900000</td>
+<td>308.000000</td>
+<td>10549.000000</td>
+<td>2025.000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Natürlich können wir auch einzelne statistische Kennzahlen berechnen. Hierzu können wir die Methoden <code>mean</code>, <code>median</code>, <code>min</code>, <code>max</code>, <code>std</code> und <code>var</code> verwenden.</p>
+<p>Beispielweise die das Durchschnittsgewicht der Pinguine, die sich von Fisch ernähren.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [70]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-14">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'diet == "fish"'</span><span class="p">)[</span><span class="s2">"body_mass_g"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-14">df.query('diet == "fish"')["body_mass_g"].mean()</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[70]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>6173.379958246346</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="gruppieren-von-daten">Gruppieren von Daten<a class="anchor-link" href="#gruppieren-von-daten">¶</a></h3><p>Nun stellt sich natürlich die Frage, ob sich die Ernährungsgewohnheiten der Pinguine auf das Gewicht auswirken. Hierzu können wir die Daten gruppieren und dann statistische Kennzahlen berechnen. Wieder käme ein <code>for</code>-Loop in Frage, aber auch hier bietet uns <code>pandas</code> eine elegantere Lösung an. Dieser Befehl lautet <code>groupby</code>:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-15">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'diet'</span><span class="p">)[</span><span class="s2">"body_mass_g"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-15">df.groupby('diet')["body_mass_g"].mean()</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[71]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>diet
+fish        6173.379958
+krill       4627.906977
+parental    3530.867442
+squid       5520.274611
+Name: body_mass_g, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Unklar ist jedoch in wie weit sich das Gewicht nur durch die Ernährungsgewohnheiten erklären lässt oder ob hier auch das Geschlecht eine Rolle spielt.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h5 id="aufgabe-berechnen-sie-das-durchschnittsgewicht-der-pinguine-der-spezies-adelie-und-gruppiert-nach-geschlecht-und-ernahrungsgewohnheiten">✍️ Aufgabe: Berechnen Sie das Durchschnittsgewicht der Pinguine der Spezies <code>"Adelie"</code> und gruppiert nach Geschlecht und Ernährungsgewohnheiten.<a class="anchor-link" href="#aufgabe-berechnen-sie-das-durchschnittsgewicht-der-pinguine-der-spezies-adelie-und-gruppiert-nach-geschlecht-und-ernahrungsgewohnheiten">¶</a></h5><p>Wenn Sie doppelt gruppieren wollen, können Sie eine Liste von Spaltennamen an die Methode <code>groupby(["diet","sex"])</code> übergeben</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-16">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-16"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-17">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"species == 'Adelie'"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"diet"</span><span class="p">,</span><span class="s2">"sex"</span><span class="p">])[</span><span class="s2">"body_mass_g"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-17">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
+
+df.query("species == 'Adelie'").groupby(["diet","sex"])["body_mass_g"].mean()</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[72]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>diet      sex   
+fish      female    5189.405660
+          male      6184.761628
+krill     female    3987.316265
+          male      4785.395894
+parental  female    3008.362319
+          male      3601.914692
+squid     female    4606.692308
+          male      5500.086957
+Name: body_mass_g, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="plots-mit-seaborn">Plots mit <code>seaborn</code><a class="anchor-link" href="#plots-mit-seaborn">¶</a></h2><p>Nun wollen wir die Daten visualisieren. Hierzu können wir die Bibliothek <code>seaborn</code> verwenden. <code>seaborn</code> ist eine Bibliothek, die auf <code>matplotlib</code> aufbaut und eine einfachere und schönere API bietet.</p>
+<p>Soweit haben wir ausgewertet, wie Geschlecht und Ernährungsgewohnheiten das Gewicht beeinflussen. Können Sie auf einen Blick erkennen, wie sich das Gewicht der Pinguine in den verschiedenen Gruppen unterscheidet?</p>
+<p>Damit dies leichter fällt, möchten wir die Daten visualisieren. Zunächst müssen wir uns Gedanken machen, welche Art von Plot wir verwenden wollen. Hierfür bietet <code>seaborn</code> eine Vielzahl von <a href="https://seaborn.pydata.org/tutorial/function_overview.html">Plots</a> an. In diesem Fall wollen wir die Methode <code>barplot</code> verwenden, die uns die Mittelwerte der Gruppen anzeigt. In der <a href="https://seaborn.pydata.org/examples/index.html">Example-Galerie</a> von <code>seaborn</code> finden Sie viele Beispiele, wie Sie die Daten visualisieren können. Zum Beispiel können Sie sich die <a href="https://seaborn.pydata.org/examples/grouped_barplot.html">Beispiele für barplots</a> ansehen</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-18">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">df_plot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'species == "Adelie"'</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_plot</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"diet"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"body_mass_g"</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span><span class="s2">"sex"</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-18">import seaborn as sns
+
+df_plot = df.query('species == "Adelie"')
+
+fig = sns.barplot(data=df_plot, x="diet", y="body_mass_g", hue ="sex")</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
+<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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i9LT0+Xj42O0WbRokUaOHKm77rpLbm5uio+P16xZs4z1gYGBWr16tRISEtS+fXvVrVtXSUlJ3HIPmFRgYKACAgLk7u6u0NBQlZWV6ZVXXtGaNWuMs89NmjTRpk2b9Pbbb6tbt27Gti+//LI6d+4sSRo2bJgmTJiggwcPqkmTJpKkBx54QOvXr9f48eMlSfHx8Xb7fv/991WvXj3t27dPt95660W1vfnmm2rbtq0xtvL8NuHh4fr222918803V+03A4AkFwciSerbt6/69u172fUWi0XJyclKTk6+bJs6depo8eLFV9xPq1at9K9//cvhOgHcuA4cOKBTp06pZ8+edsvLy8vVtm1bu2WtWrUyvg4JCVGtWrWMMHR+2bZt24z57777TklJScrOztZPP/1knBnKz8+/ZCDavXu31q9fL39//4vWHTx4kEAEOInLAxEAuNr5V/2sWLFCf/jDH+zWeXt72817enoaX1ssFrv588suvBx2zz33KCIiQu+++64aNGigyspK3XrrrSovL79sLffcc49ee+21i9aFhYX9vgMDcNUIRABMLzo6Wt7e3srPz7e7PHatfv75Z+3fv1/vvvuu7rjjDknSpk2brrhNu3bt9I9//EONGzfmzjegGrn85a4A4GoBAQF67rnnlJiYqIULF+rgwYPauXOnZs+ebTwo1hG1a9dWcHCw3nnnHR04cEDr1q37zZs5EhISdOzYMQ0YMEDbt2/XwYMHtWrVKj3++OOqqKhwuBYAV8Z/PwBA0pQpU1SvXj2lpKTo0KFDCgoKUrt27fT888873Kebm5s+/PBDPfPMM7r11lvVvHlzzZo1S927d7/sNg0aNNDmzZs1fvx49erVS2VlZYqIiFDv3r3l5sb/YQFnsdhsNt6ueRVKSkoUGBio4uJi0z2kMT+5patLuGaNkva4uoQb1pkzZ5SXl6fIyEi7uz9RvfgcgEu72r/f/HcDAACYHoEIAACYHmOIAADANbHZbCotLTXm/fz8ZLFYXFjR70cgAgAA16S0tFT9+vUz5pctW3bJh4vWZFwyAwAApkcgAgAApkcgAgAApkcgAgAApkcgAgAApkcgAoAqMmTIEN13332uLgOAA7jtHoBTVPcrX3g9C4BrwRkiAABgegQiAKbUvXt3jRo1SqNHj1bt2rUVEhKid999V6WlpXr88ccVEBCgpk2bauXK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3npLH3/8sRITE1156AAAoAZx6Rii77//XgMGDNDPP/+sevXqqUuXLtq6davq1asnSZo+fbrc3NwUHx+vsrIyxcXF6a233jK2d3d31/Lly/XUU08pJiZGfn5+Gjx4sJKTk402kZGRWrFihRITEzVz5kw1bNhQ7733HrfcAwAAg8Vms9lcXcT1oKSkRIGBgSouLr7q8UTtx37g5Kqqx2cBr7u6hGvWKGmPq0swPZvNptLSUmPez89PFh4oClSr/OSWri7hmv3e3+dX+/fb5Q9mBGAOpaWl6tevnzG/bNky+fv7u7AiAPj/atSgagAAAFcgEAEAANMjEAEAANMjEAEAANNjUDUAO866C+XUOYukesb891NvVy0P59zkyl2FuJ5wB2bNQCACAMCFuAOzZuCSGQAAMD0CEQAAMD0CEQAAMD3GEAGoFr7uNs3p/KPdPADUFAQiANXCYpHT7ioDgGvFJTMAAGB6BCIAAGB6BCIAAGB6jCECAOA3tB/7gdP6tpwrV+AF891f/FA2Dy+n7OuzAKd0e0PgDBEAADA9AhEAADA9AhEAADA9AhEAADA9AhEAADA9AhEAADA9AhEAADA9AhEAADA9AhEAADA9nlQNAIAL2dw9VdxqgN08qh+BCAAAV7JYnPaqDlw9LpkBAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADTIxABAADT83B1AQB+m81mU2lpqTHv5+cni8XiwooA4MZSo84Qvfrqq7JYLBo9erSx7MyZM0pISFBwcLD8/f0VHx+vo0eP2m2Xn5+vPn36qFatWqpfv77Gjh2rc+fO2bXJzMxUu3bt5O3traZNmyotLa0ajgioGqWlperXr58xXRiOAADXzqEzRLNmzbrkcovFIh8fHzVt2lRdu3aVu7v7Vfe5fft2vf3222rVqpXd8sTERK1YsUKffPKJAgMDNXLkSPXv31+bN2+WJFVUVKhPnz4KDQ3Vli1bVFBQoEGDBsnT01OvvPKKJCkvL099+vTRiBEjtGjRIq1du1ZPPPGEwsLCFBcX58i3AAAA3EAcCkTTp0/Xjz/+qFOnTql27dqSpF9++UW1atWSv7+/ioqK1KRJE61fv17h4eG/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MtS6dWulpqbqvffe45Z7AAAgycVniGw222+28fHx0Zw5czRnzpzLtomIiNAXX3xxxX66d++uXbt2/e4aAQDAja/G3GUGAADgKgQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgegQiAABgei4NRBs3btQ999yjBg0ayGKxaOnSpXbrbTabkpKSFBYWJl9fX8XGxuq7776za3Ps2DENHDhQVqtVQUFBGjZsmE6ePGnX5ssvv9Qdd9whHx8fhYeHa+rUqc4+NAAAcB1xaSAqLS1V69atNWfOnEuunzp1qmbNmqV58+YpOztbfn5+iouL05kzZ4w2AwcO1N69e5WRkaHly5dr48aNGj58uLG+pKREvXr1UkREhHJycvT6669r0qRJeuedd5x+fAAA4Prg4cqd33333br77rsvuc5ms2nGjBmaOHGi+vXrJ0n64IMPFBISoqVLl+rhhx/W119/rfT0dG3fvl0dOnSQJM2ePVv/8z//ozfeeEMNGjTQokWLVF5ervfff19eXl665ZZblJubq2nTptkFJwAAYF41dgxRXl6eCgsLFRsbaywLDAxUx44dlZWVJUnKyspSUFCQEYYkKTY2Vm5ubsrOzjbadO3aVV5eXkabuLg47d+/X7/88stl919WVqaSkhK7CQAA3JhqbCAqLCyUJIWEhNgtDwkJMdYVFhaqfv36dus9PDxUp04duzaX6uPCfVxKSkqKAgMDjSk8PPzaDggAANRYNTYQudqECRNUXFxsTEeOHHF1SQAAwElqbCAKDQ2VJB09etRu+dGjR411oaGhKioqslt/7tw5HTt2zK7Npfq4cB+X4u3tLavVajcBAIAbU40NRJGRkQoNDdXatWuNZSUlJcrOzlZMTIwkKSYmRsePH1dO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kH79+fLw8NC2bds0c+ZMTZs2Te+9954k6ezZs5oyZYp2796tpUuX6vDhwxoyZMhFffzlL3/Rq6++qq+//lqtWrVSSkqKPvjgA82bN0979+5VYmKiHn30UW3YsMFuuxdeeEGpqanasWOHPDw8NHToUEm/Ptz2f//3f3XLLbeooKBABQUF+tOf/iRJcnNz06xZs7R3714tXLhQ69at07hx45z7TTKRgoICDRgwQEOHDtXXX3+tzMxM9e/fXzabTampqUpLS9P777+vTZs26dixY/rss8+uaX8nT55U3759FR0drZycHE2aNEnPPfdcFR1NDWaDKU2fPt0WERFhzHfr1s327LPP2mw2m+0f//iHzWq12kpKSi65bbdu3WxdunSxW3bbbbfZxo8f76xycQ3Of7ZvvvmmLTAw0JaZmWmsGzx4sC0kJMRWVlZmt01ERIRt+vTpxrwk22effWaz2Wy2vLw8myTbrl27qqF68+nWrZstKirKVllZaSwbP368LSoq6pLtt2/fbpNkO3HihM1ms9nWr19vk2RbunSp0ebMmTO2WrVq2bZs2WK37bBhw2wDBgyw227NmjXG+hUrVtgk2U6fPm2z2Wy2l156yda6devfPIZPPvnEFhwcbMwvWLDAFhgY+Jvb4dJycnJskmyHDx++aF1YWJht6tSpxvzZs2dtDRs2tPXr189Y9t8/zzabzda6dWvbSy+9ZMxf+DP+9ttv24KDg43P3Waz2ebOnXvD/9xzURkX6dmzpyIiItSkSRP17t1bvXv31v33369atWoZbVq1amW3TVhYmN1pe9QsS5YsUVFRkTZv3qzbbrvNbl3Lli3l5eXlospwKZ06dZLFYjHmY2JilJqaqoqKCuXm5mrSpEnavXu3fvnlF1VWVkqS8vPzFR0dbWzToUMH4+sDBw7o1KlT6tmzp91+ysvL1bZtW7tlF/5sh4WFSZKKiorUqFGjy9a7Zs0apaSk6JtvvlFJSYnOnTunM2fO6NSpU3a/N+CY1q1b66677lLLli0VFxenXr166YEHHpCbm5sKCgrUsWNHo62Hh4c6dOhgXGJ1xPmzij4+PsYyM7wInUtmuEhAQIB27typv//97woLC1NSUpJat26t48ePG208PT3ttrFYLMYvZtQ8bdu2Vb169fT+++9f9IuSu8muH2fOnFFcXJysVqsWLVqk7du3G5dH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"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Der Plot wird zurückgegeben und und in der variablen <code>fig</code> gespeichert. Wir können ihn mit der Methode <code>show</code> anzeigen.
+Als Daten erwartet der Plot einen Dataframe und die Namen der Spalten, die auf der x- und y-Achse dargestellt werden sollen. Über <code>hue</code> (Farbton) können wir die Daten noch weiter gruppieren.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Der Plot hilft weiter, aber noch wäre er nicht perfekt, um alle Punkte in einem Laborbericht zu bekommen. Hierfür können wir diverse <code>set</code>-Methoden verwenden, um die Achsenbeschriftungen zu ändern und den Plot zu verschönern.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [74]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-19">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># set the title</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Adelie Penguins"</span><span class="p">)</span>
+
+<span class="c1"># set the x-axis label</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Diet"</span><span class="p">)</span>
+
+<span class="c1"># set the y-axis label</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Body Mass in g"</span><span class="p">)</span>
+
+<span class="c1"># store the plot</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"Adelie_penguins.png"</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-19"># set the title
+fig.set_title("Adelie Penguins")
+
+# set the x-axis label
+fig.set_xlabel("Diet")
+
+# set the y-axis label
+fig.set_ylabel("Body Mass in g")
+
+# store the plot
+
+fig.figure.savefig("Adelie_penguins.png")</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="umgang-mit-ki-unterstutzung">🤖 Umgang mit KI-Unterstützung<a class="anchor-link" href="#umgang-mit-ki-unterstutzung">¶</a></h2><h3 id="promts-fur-chatgpt">Promts für ChatGPT<a class="anchor-link" href="#promts-fur-chatgpt">¶</a></h3><p>Überlegen sie sich immer genau, das die KI wissen muss, um Ihnen möglichst gut helfen zu können (z.B. die Struktur Ihrer Daten). Innerhalb einer Chat-Session merkt sich die KI, was sie zuvor gesagt haben. Sie können also in einer Chat-Session aufeinander aufbauende Fragen stellen.</p>
+<p><strong>gut</strong></p>
+<pre><code>I have a csv file palmerpenguins_extended.csv that contains data about penguins. And looks like this:
+
+species,island,bill_length_mm,bill_depth_mm,flipper_length_mm,body_mass_g,sex,diet,life_stage,health_metrics,year
+Adelie,Biscoe,53.4,17.8,219.0,5687.0,female,fish,adult,overweight,2021
+Adelie,Biscoe,49.3,18.1,245.0,6811.0,female,fish,adult,overweight,2021
+Adelie,Biscoe,55.7,16.6,226.0,5388.0,female,fish,adult,overweight,2021
+
+
+How can I Read this into a Pandas Dataframe? And how can I filter the data only for the island ``Biscoe`` and get the maximum body mass of the penguins grouped by species and sex?
+</code></pre>
+<p><strong>schlecht</strong></p>
+<pre><code>Hot to read a csv file into a pandas dataframe and get the mean of a value?
+</code></pre>
+<h3 id="unterstutzung-durch-autocomplete">Unterstützung durch Autocomplete<a class="anchor-link" href="#unterstutzung-durch-autocomplete">¶</a></h3><p>Nutzen Sie Kommentare, um die KI zu unterstützen. Sie können Kommentare verwenden, um der KI zu sagen, was Sie als nächstes tun möchten.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="projekt">🏆 Projekt<a class="anchor-link" href="#projekt">¶</a></h2>
 </div>
 </div>
 </div>

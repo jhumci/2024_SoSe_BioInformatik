@@ -54,7 +54,11 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#sortieren-einer-liste">Sortieren einer Liste</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#blast-suche-mit-python">BLAST-Suche mit Python</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#aufgabe-haufigkeit-von-elementen-in-einer-liste">✍️ Aufgabe: Häufigkeit von Elementen in einer Liste</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aufgabe-diskussion">✍️ Aufgabe: Diskussion</a>
     </li>
         </ul>
     </li>
@@ -72,9 +76,11 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#aufgabe-uberfuhrung-von-listen-in-dictionaries">✍️ Aufgabe: Überführung von Listen in Dictionaries</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bestimmung-von-codon-haufigkeiten">🏆 Bestimmung von Codon-Häufigkeiten</a>
+    </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#bestimmung-von-codon-haufigkeiten">🏆 Bestimmung von Codon-Häufigkeiten</a>
+    <li class="toctree-l2"><a class="reference internal" href="#user-input">🤓 User-Input</a>
     </li>
     </ul>
                 </li>
@@ -573,7 +579,7 @@ Listen sind in Python durch eckige Klammern <code>[]</code> gekennzeichnet. Die 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [131]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-1">
@@ -628,7 +634,7 @@ print(my_list[6])</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [133]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-2">
@@ -657,7 +663,7 @@ my_expressions : list[float] = [5.3, 2.7, 0.0, 1.2, 3.8]</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [134]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-3">
@@ -740,7 +746,7 @@ print("The maximum expression value is: " + str(expression_max))
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [123]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-5">
@@ -808,7 +814,7 @@ print("The mean expression value is : " + str(length))</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [124]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-6">
@@ -856,7 +862,7 @@ print("The sorted expression values are: " + str(my_expressions))</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [125]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-7">
@@ -900,7 +906,7 @@ print("The expression values with the new value are: " + str(my_expressions))</d
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [126]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-8">
@@ -944,7 +950,7 @@ print("The expression values in reverse order are: " + str(my_expressions))</div
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [127]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-9">
@@ -999,7 +1005,7 @@ print("The expression values with the third element removed are: " + str(my_expr
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [128]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-10">
@@ -1052,10 +1058,10 @@ print(my_expressions_sorted)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="aufgabe-haufigkeit-von-elementen-in-einer-liste">✍️ Aufgabe: Häufigkeit von Elementen in einer Liste<a class="anchor-link" href="#aufgabe-haufigkeit-von-elementen-in-einer-liste">¶</a></h3><p>Der folgenden Code installiert ein Paket (<code>biopython</code>), das es ermöglicht die NCBi Datenbank zu durchsuchen und effizient mit Sequenzdaten zu arbeiten.</p>
-<p>Wir gehen davon aus, dass wir eine DNA-Sequenz von einem uns unbekannten Fisch haben. Wir wollen nun bestimmen, um welche Fischart es es sich handelt. Dazu lassen wird die Sequenz in der NCBi Datenbank suchen.</p>
+<h3 id="blast-suche-mit-python">BLAST-Suche mit Python<a class="anchor-link" href="#blast-suche-mit-python">¶</a></h3><p>Der folgenden Code installiert ein Paket (<code>biopython</code>), das es ermöglicht die NCBi Datenbank zu durchsuchen und effizient mit Sequenzdaten zu arbeiten.</p>
+<p>Wir gehen davon aus, dass wir eine DNA-Sequenz von einem uns unbekannten Organismus haben. Wir wollen nun bestimmen, um welche Organismus es es sich handelt. Dazu lassen wird die Sequenz in der NCBi Datenbank suchen.</p>
 <p>Die Suche gibt uns Treffer (Alignments) zurück. Jeder Treffer verschiedene Eigenschaften, wie z.B. den Namen der Art, die Sequenz, die Länge der Sequenz, den Grad der Übereinstimmung etc.</p>
-<p>Wir wollen in erster Näherung davon aus gehen, dass die Art, die am häufigsten vorkommt, die Art ist, zu der unsere Sequenz gehört. Dabei ignorieren wir, die Informationen über die Übereinstimmung und die Länge der Sequenz. Zudem sind Species mit vielen Einträgen in der NCBi Datenbank wahrscheinlich häufiger als solche mit wenigen Einträgen.</p>
+<p>Wir wollen in erster Näherung davon aus gehen, dass die Art, die am häufigsten vorkommt, die Art ist, zu der unsere Sequenz gehört. Dabei ignorieren wir, die Informationen über die Übereinstimmung und die Länge der Sequenz.</p>
 </div>
 </div>
 </div>
@@ -1065,7 +1071,7 @@ print(my_expressions_sorted)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [135]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-11">
@@ -1126,8 +1132,7 @@ Requirement already satisfied: numpy in c:\python312\lib\site-packages (from bio
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Im folgenden übergeben wir eine Gen-Sequenz, einer unbekannten Fisch-Spezies, an die Funktion <code>qblast()</code>. Die Funktion gibt uns eine Liste an Treffern mit der höchsten Übereinstimmung zurück.</p>
-<p>Ihre Aufgabe ist es nun, zu bewerten um welche Art von Fisch es sich handelt. Dazu sollen Sie die fünf größten Übereinstimmungswerte ausgeben.</p>
+<p>Im folgenden übergeben wir eine Gen-Sequenz, einer unbekannten Spezies, an die Funktion <code>qblast()</code>. Die Funktion gibt uns eine Liste an Treffern mit der höchsten Übereinstimmung zurück.</p>
 <p><strong>Vorsicht: Die Abfrage kann einige Zeit in Anspruch (ca. 2 Minuten) nehmen.</strong></p>
 <p><strong>Sie können alternativ auch direkt die Zelle darunter ausführen, um das Ergebnis zu sehen.</strong></p>
 </div>
@@ -1139,7 +1144,7 @@ Requirement already satisfied: numpy in c:\python312\lib\site-packages (from bio
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [136]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-12">
@@ -1159,7 +1164,7 @@ Requirement already satisfied: numpy in c:\python312\lib\site-packages (from bio
 <span class="n">result_handle</span> <span class="o">=</span> <span class="n">NCBIWWW</span><span class="o">.</span><span class="n">qblast</span><span class="p">(</span><span class="s2">"blastn"</span><span class="p">,</span> <span class="s2">"nt"</span><span class="p">,</span> <span class="n">sequence_data</span><span class="p">,</span> <span class="n">hitlist_size</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
 
 <span class="c1"># Store the result in a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"my_blast.xml"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">out_handle</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"your_blast.xml"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">out_handle</span><span class="p">:</span>
     <span class="n">out_handle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">result_handle</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 <span class="n">result_handle</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -1170,78 +1175,10 @@ sequence_data = Seq("TGCACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGA
 result_handle = NCBIWWW.qblast("blastn", "nt", sequence_data, hitlist_size = 50)
 
 # Store the result in a file
-with open("my_blast.xml", "w") as out_handle:
+with open("your_blast.xml", "w") as out_handle:
     out_handle.write(result_handle.read())
 result_handle.close()
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [147]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy for="cell-13">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># open the result file</span>
-<span class="n">result_handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"my_blast.xml"</span><span class="p">)</span>
-
-<span class="c1"># geht all the organisms in a list</span>
-
-<span class="n">organism_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">blast_record</span> <span class="ow">in</span> <span class="n">NCBIXML</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">result_handle</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">alignment</span> <span class="ow">in</span> <span class="n">blast_record</span><span class="o">.</span><span class="n">alignments</span><span class="p">:</span>
-        <span class="n">organism_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alignment</span><span class="o">.</span><span class="n">bit_score</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">organism_list</span><span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-13"># open the result file
-result_handle = open("my_blast.xml")
-
-# geht all the organisms in a list
-
-organism_list = []
-for blast_record in NCBIXML.parse(result_handle):
-    for alignment in blast_record.alignments:
-        organism_list.append(alignment.bit_score)
-
-print(organism_list)</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">AttributeError</span>                            Traceback (most recent call last)
-Cell <span class="ansi-green-intense-fg ansi-bold">In[147], line 9</span>
-<span class="ansi-green-fg">      7</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> blast_record <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> NCBIXML<span style="color: rgb(98,98,98)">.</span>parse(result_handle):
-<span class="ansi-green-fg">      8</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> alignment <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> blast_record<span style="color: rgb(98,98,98)">.</span>alignments:
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 9</span>         organism_list<span style="color: rgb(98,98,98)">.</span>append(<span class="ansi-yellow-bg">alignment</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">bit_score</span>)
-<span class="ansi-green-fg">     11</span> <span style="color: rgb(0,135,0)">print</span>(organism_list)
-
-<span class="ansi-red-intense-fg ansi-bold">AttributeError</span>: 'Alignment' object has no attribute 'bit_score'</pre>
 </div>
 </div>
 </div>
@@ -1254,7 +1191,7 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[147], line 9</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Leider haben die Einträge in <code>titles</code> keine direkte Übereinstimmung mit den Arten. Sie müssen also die Einträge in <code>titles</code> so bearbeiten, dass Sie die Art herauslesen können. Das wird nicht einfach, da die Einträge in <code>titles</code> nicht einheitlich sind. Sie müssen also eine Strategie entwickeln, um die Art herauszulesen. Eine Möglichkeit ist es nur die ersten beiden Worten zu verwenden, da diese scheinbar öft (wenn auch nicht immer die Art enthalten).</p>
+<p>Schauen Sie sich die <a href="https://github.com/jhumci/2024_SoSe_BioInformatik/blob/main/docs/data/my_blast.xml">Datei</a> an, die Sie heruntergeladen haben. Welches Feld hat am ehesten die Information, die Sie suchen?</p>
 </div>
 </div>
 </div>
@@ -1264,7 +1201,81 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[147], line 9</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [143]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-13">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Im Folgenden ziehen wir die Relevanten Informationen aus der XML-Datei</span>
+<span class="c1"># open the result file</span>
+<span class="n">result_handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"my_blast.xml"</span><span class="p">)</span>
+
+<span class="c1"># geht all the organisms in a list</span>
+
+<span class="n">organism_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">blast_record</span> <span class="ow">in</span> <span class="n">NCBIXML</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">result_handle</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">alignment</span> <span class="ow">in</span> <span class="n">blast_record</span><span class="o">.</span><span class="n">alignments</span><span class="p">:</span>
+        <span class="n">organism_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">alignment</span><span class="o">.</span><span class="n">hit_def</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">organism_list</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-13"># Im Folgenden ziehen wir die Relevanten Informationen aus der XML-Datei
+# open the result file
+result_handle = open("my_blast.xml")
+
+# geht all the organisms in a list
+
+organism_list = []
+for blast_record in NCBIXML.parse(result_handle):
+    for alignment in blast_record.alignments:
+        organism_list.append(str(alignment.hit_def.split(" ")[0:1][0]))
+
+print(organism_list)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>['Salmo', 'Salmo', 'Salmo', 'Salmo', 'Salmo', 'Salmo', 'Salmo', 'Triticum', 'Brassica', 'Ziziphus', 'Kuwaitiella', 'Kuwaitiella', 'Agrostemma', 'Aplysina', 'PREDICTED:', 'Pinus', 'Uncultured', 'Uncultured', 'Uncultured', 'Uncultured', 'Uncultured', 'Uncultured', 'Uncultured', 'Paspalum', 'Quercus', 'Balanophora', 'Hedera', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'Balanophora', 'PREDICTED:']
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Leider haben die Einträge in <code>hit_def</code> keine direkte Übereinstimmung mit den Arten. Sie müssen also die Einträge in <code>hit_def</code> so bearbeiten, dass Sie die Art herauslesen können. Das wird nicht einfach, da die Einträge in <code>hit_def</code> nicht einheitlich sind. Sie müssen also eine Strategie entwickeln, um die Art herauszulesen. Eine Möglichkeit ist es nur die ersten beiden Worten zu verwenden, da diese scheinbar öfter (wenn auch nicht immer) die Art enthalten).</p>
+<p>Mit dem <code>set()</code> Befehl können Sie die einzigartigen Einträge in einer Liste ausgeben. Das kann Ihnen helfen, die Einträge in <code>hit_def</code> zu verstehen.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-14">
@@ -1291,60 +1302,35 @@ titles</div>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[143]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>['Pinus environmental sample clone CEobese177 18S ribosomal RNA gene, partial sequence',
- 'Uncultured eukaryote clone TW-B1-1-11a 18S ribosomal RNA gene, partial sequence',
- 'Uncultured eukaryote clone KG.E36# 18S ribosomal RNA gene, partial sequence',
- 'Balanophora sp. PML064 small subunit ribosomal RNA gene, partial sequence',
- 'Quercus cerris genome assembly, chromosome: 6',
- 'Uncultured eukaryote clone TWI-5b 18S ribosomal RNA gene, partial sequence',
- 'Balanophora latisepala voucher PC-lat small subunit ribosomal RNA gene, partial sequence',
- 'Hedera helix genome assembly, chromosome: 1',
- 'Salmo trutta genome assembly, chromosome: 21',
- 'Balanophora subcupularis voucher PML051 small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora subcupularis voucher PML054 small subunit ribosomal RNA gene, partial sequence',
- 'Uncultured Paraglomus clone Sd7 small subunit ribosomal RNA gene, partial sequence',
- 'Paspalum notatum var. saurae isolate R1 chromosome 08',
- 'Salmo trutta genome assembly, chromosome: 28',
- 'Balanophora sp. PML065 small subunit ribosomal RNA gene, partial sequence',
- 'PREDICTED: Tripterygium wilfordii 18S ribosomal RNA (LOC119994808), rRNA',
- 'Balanophora sp. Yu003 small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora subcupularis voucher HKM-sub small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora sp. PML070 small subunit ribosomal RNA gene, partial sequence',
- 'Salmo trutta genome assembly, chromosome: 26',
- 'Balanophora involucrata voucher Yu023 small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora abbreviata voucher PML059 small subunit ribosomal RNA gene, partial sequence',
- 'Uncultured eukaryote gene for 18S rRNA, partial sequence, clone: 18S-AK-B-21',
- 'Uncultured Trinematidae clone Ja_2_8 18S ribosomal RNA gene, partial sequence',
- 'Ziziphus jujuba cultivar Dongzao chromosome 8',
- 'Balanophora fungosa voucher MK-fun small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora latisepala voucher PML056 small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora sp. SZ-2021 voucher Yu006 small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora latisepala voucher MF-lat small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora fungosa voucher KMP-fun small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora fungosa voucher MF-fun small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora latisepala voucher DP-lat small subunit ribosomal RNA gene, partial sequence',
- 'Triticum monococcum genome assembly, chromosome: UA',
- 'Uncultured eukaryote clone TW-B1-2-11a 18S ribosomal RNA gene, partial sequence',
- 'Balanophora sp. PML062 small subunit ribosomal RNA gene, partial sequence',
- 'Agrostemma githago genome assembly, chromosome: 20',
- 'Salmo trutta genome assembly, chromosome: 12',
- 'Salmo trutta genome assembly, chromosome: 33',
- 'Balanophora sp. PML066 small subunit ribosomal RNA gene, partial sequence',
- 'Brassica napus cultivar Xiang5A chromosome 10',
- 'Kuwaitiella rubra isolate K118_KHI50219-7 small subunit ribosomal RNA gene, partial sequence',
- 'PREDICTED: Bombus huntii small subunit ribosomal RNA (LOC126877703), rRNA',
- 'Balanophora latisepala voucher AG small subunit ribosomal RNA gene, partial sequence',
- 'Salmo trutta genome assembly, chromosome: 16',
- 'Balanophora sp. PML063 small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora abbreviata voucher PML057 small subunit ribosomal RNA gene, partial sequence',
- 'Salmo trutta genome assembly, chromosome: 3',
- 'Aplysina aerophoba genome assembly, chromosome: 1',
- 'Kuwaitiella rubra isolate KA16_KHI50219-7 small subunit ribosomal RNA gene, partial sequence',
- 'Balanophora laxiflora voucher PC-lax small subunit ribosomal RNA gene, partial sequence']</pre>
+<pre>['Agrostemma',
+ 'Triticum',
+ 'Brassica',
+ 'Salmo',
+ 'Uncultured',
+ 'Balanophora',
+ 'Kuwaitiella',
+ 'Ziziphus',
+ 'Paspalum',
+ 'Hedera',
+ 'Aplysina',
+ 'Quercus',
+ 'PREDICTED:',
+ 'Pinus']</pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="aufgabe-haufigkeit-von-elementen-in-einer-liste">✍️ Aufgabe: Häufigkeit von Elementen in einer Liste<a class="anchor-link" href="#aufgabe-haufigkeit-von-elementen-in-einer-liste">¶</a></h3><p>Nutzen Sie die Methode <code>&lt;list&gt;.count(&lt;entry&gt;)</code>, um heraus zu finden, wie oft ein Eintrag in einer Liste vorkommt.</p>
 </div>
 </div>
 </div>
@@ -1367,21 +1353,21 @@ titles</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Nutzen</span> <span class="n">Sie</span> <span class="n">dann</span> <span class="n">die</span> <span class="n">Funktion</span> <span class="err">`</span><span class="n">count</span><span class="p">(</span><span class="o">&lt;</span><span class="n">spezies_name</span><span class="o">&gt;</span><span class="p">)</span><span class="err">`</span> <span class="n">um</span> <span class="n">die</span> <span class="n">Anzahl</span> <span class="n">der</span> <span class="n">Treffer</span> <span class="n">für</span> <span class="n">jedes</span> <span class="n">Organismus</span> <span class="n">zu</span> <span class="n">erhalten</span><span class="o">.</span>
+<div class="highlight-ipynb hl-python"><pre><span></span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15"> Nutzen Sie dann die Funktion `count(<spezies_name>)` um die Anzahl der Treffer für jedes Organismus zu erhalten.</spezies_name></div>
+<div class="clipboard-copy-txt" id="cell-15"></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-16">
@@ -1394,14 +1380,114 @@ titles</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">twp</span>
-<span class="k">for</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">titles</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">title</span> <span class="o">+</span> <span class="s2">" : "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">organism_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">title</span><span class="p">)))</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }</span>
+<span class="n">organism_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">"Salmo"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">twp
-for title in titles:
-    print(title + " : " + str(organism_list.count(title)))
-    </div>
+<div class="clipboard-copy-txt" id="cell-16">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
+organism_list.count("Salmo")</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>7</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-17">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }</span>
+<span class="n">organism_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">"Pinus"</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-17">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
+organism_list.count("Pinus")</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>1</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="aufgabe-diskussion">✍️ Aufgabe: Diskussion<a class="anchor-link" href="#aufgabe-diskussion">¶</a></h3><p>Diskutieren Sie mit ihren Kommilitonen, in wie fern Sie diese Methode für die Bestimmung der Art geeignet halten. Was sind die Vor- und Nachteile?</p>
+<ol>
+<li>Bezüglich der Treffer: Ist diese Art die Art zu bestimmen sinnvoll oder kann es hier zu Fehlern kommen?</li>
+<li>Bezüglich Programmierung: Ist dies eher aufwendiger oder schneller als eine Suche auf der BLAST-Webseite? Was würden Sie gerne weiter automatisieren?</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-18">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }</span>
+
+<span class="c1"># 1. Da wir nicht wissen, wie viele Sequenzen von welchem Organismus in der Datenbank vorhanden sind, können wir nicht sagen, ob wir viele Treffer unter den ersten 50 finden, weil die Treffer gut sind oder weil es viele Treffer in der Datenbank gibt. Wir können erwarten, dass Spezies, die in der Datenbank häufiger vorkommen, auch häufiger unter den Treffern sind.</span>
+
+<span class="c1"># 2. Aktuell muss wird die Anzahl der Treffer für jede Spezies einzeln zählen. Das ist umständlich und fehleranfällig. Wir könnten die Anzahl der Treffer für jede Spezies in einer Schleife zählen und in einem Dictionary speichern. Das würde die Auswertung vereinfachen und das lernen wir als nächstes.</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-18">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
+
+# 1. Da wir nicht wissen, wie viele Sequenzen von welchem Organismus in der Datenbank vorhanden sind, können wir nicht sagen, ob wir viele Treffer unter den ersten 50 finden, weil die Treffer gut sind oder weil es viele Treffer in der Datenbank gibt. Wir können erwarten, dass Spezies, die in der Datenbank häufiger vorkommen, auch häufiger unter den Treffern sind.
+
+# 2. Aktuell muss wird die Anzahl der Treffer für jede Spezies einzeln zählen. Das ist umständlich und fehleranfällig. Wir könnten die Anzahl der Treffer für jede Spezies in einer Schleife zählen und in einem Dictionary speichern. Das würde die Auswertung vereinfachen und das lernen wir als nächstes.</div>
 </div>
 </div>
 </div>
@@ -1425,10 +1511,10 @@ for title in titles:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-17">
+<clipboard-copy for="cell-19">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1443,7 +1529,7 @@ for title in titles:
 <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">sequence_data</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-17">sequence = ["TGCACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTAATG"]
+<div class="clipboard-copy-txt" id="cell-19">sequence = ["TGCACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTAATG"]
 
 for letter in sequence_data:
     print(letter)</div>
@@ -1558,16 +1644,16 @@ G
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-18">
+<clipboard-copy for="cell-20">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1583,11 +1669,51 @@ G
     <span class="n">codon</span> <span class="o">=</span> <span class="n">sequence_data</span><span class="p">[</span><span class="n">start_position</span><span class="p">:</span><span class="n">start_position</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">codon</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-18">sequence = ["TGCACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTAATG"]
+<div class="clipboard-copy-txt" id="cell-20">sequence = ["TGCACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTAATG"]
 
 for start_position in range(0, len(sequence_data), 3):
     codon = sequence_data[start_position:start_position+3]
     print(codon)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>TGC
+ACC
+CCT
+AAT
+GCC
+TTC
+CTT
+GGA
+TGT
+GGT
+AGC
+TAT
+TTT
+TCT
+CAG
+GAT
+CCC
+TCT
+CCG
+GAA
+TCG
+AAC
+CAT
+AAC
+TGA
+TTT
+AAT
+G
+</pre>
 </div>
 </div>
 </div>
@@ -1610,10 +1736,10 @@ for start_position in range(0, len(sequence_data), 3):
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-19">
+<clipboard-copy for="cell-21">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1635,7 +1761,7 @@ for start_position in range(0, len(sequence_data), 3):
 
 <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-19">sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
+<div class="clipboard-copy-txt" id="cell-21">sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
 
 counter = 0
 
@@ -1683,10 +1809,10 @@ Normieren Sie die Werte in einer neuen Liste <code>normalized_values</code> und 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-20">
+<clipboard-copy for="cell-22">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1699,7 +1825,7 @@ Normieren Sie die Werte in einer neuen Liste <code>normalized_values</code> und 
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">my_genes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"BRCA1"</span><span class="p">,</span> <span class="s2">"TP53"</span><span class="p">,</span> <span class="s2">"EGFR"</span><span class="p">,</span> <span class="s2">"PTEN"</span><span class="p">,</span> <span class="s2">"CDH1"</span><span class="p">]</span>
 <span class="n">my_expressions</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.3</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-20">my_genes = ["BRCA1", "TP53", "EGFR", "PTEN", "CDH1"]
+<div class="clipboard-copy-txt" id="cell-22">my_genes = ["BRCA1", "TP53", "EGFR", "PTEN", "CDH1"]
 my_expressions = [5.3, 2.7, 0.1, 1.2, 3.8]
 
 </div>
@@ -1714,10 +1840,10 @@ my_expressions = [5.3, 2.7, 0.1, 1.2, 3.8]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-21">
+<clipboard-copy for="cell-23">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1742,7 +1868,7 @@ my_expressions = [5.3, 2.7, 0.1, 1.2, 3.8]
 
 <span class="nb">print</span><span class="p">(</span><span class="n">normalized_values</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-21">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
+<div class="clipboard-copy-txt" id="cell-23">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
 my_genes = ["BRCA1", "TP53", "EGFR", "PTEN", "CDH1"]
 my_expressions = [5.3, 2.7, 0.1, 1.2, 3.8]
 
@@ -1813,10 +1939,10 @@ print(normalized_values)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-22">
+<clipboard-copy for="cell-24">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1838,7 +1964,7 @@ print(normalized_values)</div>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-22">sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
+<div class="clipboard-copy-txt" id="cell-24">sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
 
 counter = 0
 
@@ -1884,10 +2010,10 @@ print(counter)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-23">
+<clipboard-copy for="cell-25">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1910,7 +2036,7 @@ print(counter)</div>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-23">sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
+<div class="clipboard-copy-txt" id="cell-25">sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
 
 counter = 0
 
@@ -1957,10 +2083,10 @@ print(counter)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-24">
+<clipboard-copy for="cell-26">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1987,7 +2113,7 @@ print(counter)</div>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"The sequence does not contain any stop codons."</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-24">sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
+<div class="clipboard-copy-txt" id="cell-26">sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
 
 counter = 0
 
@@ -2040,10 +2166,10 @@ else:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-25">
+<clipboard-copy for="cell-27">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2057,7 +2183,7 @@ else:
 
 <span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"BRCA1"</span><span class="p">:</span> <span class="mf">5.3</span><span class="p">,</span> <span class="s2">"TP53"</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span> <span class="s2">"EGFR"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">"PTEN"</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span> <span class="s2">"CDH1"</span><span class="p">:</span> <span class="mf">3.8</span><span class="p">}</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-25">my_dict = {}
+<div class="clipboard-copy-txt" id="cell-27">my_dict = {}
 
 my_dict = {"BRCA1": 5.3, "TP53": 2.7, "EGFR": 0.1, "PTEN": 1.2, "CDH1": 3.8}</div>
 </div>
@@ -2082,10 +2208,10 @@ my_dict = {"BRCA1": 5.3, "TP53": 2.7, "EGFR": 0.1, "PTEN": 1.2, "CDH1": 3.8}</di
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-26">
+<clipboard-copy for="cell-28">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2097,7 +2223,7 @@ my_dict = {"BRCA1": 5.3, "TP53": 2.7, "EGFR": 0.1, "PTEN": 1.2, "CDH1": 3.8}</di
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s2">"BRCA1"</span><span class="p">])</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-26">print(my_dict["BRCA1"])</div>
+<div class="clipboard-copy-txt" id="cell-28">print(my_dict["BRCA1"])</div>
 </div>
 </div>
 </div>
@@ -2133,10 +2259,10 @@ my_dict = {"BRCA1": 5.3, "TP53": 2.7, "EGFR": 0.1, "PTEN": 1.2, "CDH1": 3.8}</di
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-27">
+<clipboard-copy for="cell-29">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2150,7 +2276,7 @@ my_dict = {"BRCA1": 5.3, "TP53": 2.7, "EGFR": 0.1, "PTEN": 1.2, "CDH1": 3.8}</di
 
 <span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-27">my_dict["JAK2"] = 4.
+<div class="clipboard-copy-txt" id="cell-29">my_dict["JAK2"] = 4.
 
 print(my_dict)</div>
 </div>
@@ -2188,10 +2314,10 @@ print(my_dict)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-28">
+<clipboard-copy for="cell-30">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2206,7 +2332,7 @@ print(my_dict)</div>
 
 <span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-28">print("JAK2" in my_dict)
+<div class="clipboard-copy-txt" id="cell-30">print("JAK2" in my_dict)
 
 
 print(2 in [1,2,3])</div>
@@ -2246,10 +2372,10 @@ True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-29">
+<clipboard-copy for="cell-31">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2262,7 +2388,7 @@ True
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">my_genes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"BRCA1"</span><span class="p">,</span> <span class="s2">"TP53"</span><span class="p">,</span> <span class="s2">"EGFR"</span><span class="p">,</span> <span class="s2">"PTEN"</span><span class="p">,</span> <span class="s2">"CDH1"</span><span class="p">]</span>
 <span class="n">my_expressions</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.3</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-29">my_genes = ["BRCA1", "TP53", "EGFR", "PTEN", "CDH1"]
+<div class="clipboard-copy-txt" id="cell-31">my_genes = ["BRCA1", "TP53", "EGFR", "PTEN", "CDH1"]
 my_expressions = [5.3, 2.7, 0.1, 1.2, 3.8]
 </div>
 </div>
@@ -2276,10 +2402,10 @@ my_expressions = [5.3, 2.7, 0.1, 1.2, 3.8]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-30">
+<clipboard-copy for="cell-32">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2302,7 +2428,7 @@ my_expressions = [5.3, 2.7, 0.1, 1.2, 3.8]
 
 <span class="nb">print</span><span class="p">(</span><span class="n">expression_dict</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-30">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
+<div class="clipboard-copy-txt" id="cell-32">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
 my_genes = ["BRCA1", "TP53", "EGFR", "PTEN", "CDH1"]
 my_expressions = [5.3, 2.7, 0.1, 1.2, 3.8]
 
@@ -2342,21 +2468,21 @@ print(expression_dict)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="bestimmung-von-codon-haufigkeiten">🏆 Bestimmung von Codon-Häufigkeiten<a class="anchor-link" href="#bestimmung-von-codon-haufigkeiten">¶</a></h2><p>In der Genetik ist es oft sinnvoll die Häufigkeit von Codons zu bestimmen. Dazu können wir die Sequenz in Dreiergruppen aufteilen und dann die Häufigkeit der Codons zählen. Erstellen Sie ein Programm, das die Häufigkeit der Codons in einer Sequenz bestimmt. Das Programm soll ein Dictionary zurückgeben, das die Häufigkeit der Codons enthält. Der Schlüssel des Dictionarys soll das Codon sein und der Wert die Häufigkeit.</p>
+<h3 id="bestimmung-von-codon-haufigkeiten">🏆 Bestimmung von Codon-Häufigkeiten<a class="anchor-link" href="#bestimmung-von-codon-haufigkeiten">¶</a></h3><p>In der Genetik ist es oft sinnvoll die Häufigkeit von Codons zu bestimmen. Dazu können wir die Sequenz in Dreiergruppen aufteilen und dann die Häufigkeit der Codons zählen. Erstellen Sie ein Programm, das die Häufigkeit der Codons in einer Sequenz bestimmt. Das Programm soll ein Dictionary zurückgeben, das die Häufigkeit der Codons enthält. Der Schlüssel des Dictionarys soll das Codon sein und der Wert die Häufigkeit.</p>
 <p>Sie müssen dazu für jedes Codon überprüfen, ob es bereits im Dictionary enthalten ist. Dann gibt es eine Fallunterscheidung. Wenn ja, erhöhen Sie den Wert dieses Eintrages um 1. Wenn nein, fügen Sie das Codon als Schlüssel hinzu und setzen den Wert auf 1. Printen Sie am Ende das Dictionary aus.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-31">
+<clipboard-copy for="cell-33">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2379,7 +2505,7 @@ print(expression_dict)
 
 <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-31"># Orientieren Sie sich an Code von zuvor
+<div class="clipboard-copy-txt" id="cell-33"># Orientieren Sie sich an Code von zuvor
 sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
 
 counter = 0
@@ -2395,6 +2521,19 @@ print(counter)</div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>2
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
@@ -2402,10 +2541,10 @@ print(counter)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-32">
+<clipboard-copy for="cell-34">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2415,7 +2554,9 @@ print(counter)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sequence</span> <span class="o">=</span> <span class="s2">"TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }</span>
+
+<span class="n">sequence</span> <span class="o">=</span> <span class="s2">"TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"</span>
 
 <span class="n">codons_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
@@ -2432,7 +2573,9 @@ print(counter)</div>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">codons_dict</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-32">sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
+<div class="clipboard-copy-txt" id="cell-34">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
+
+sequence = "TGCTAACCCCTAATGCCTTCCTTGGATGTGGTAGCTATTTTTCTCAGGATCCCTCTCCGGAATCGAACCATAACTGATTTATAAATG"
 
 codons_dict = {}
 
@@ -2466,6 +2609,123 @@ print(codons_dict)</div>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="user-input">🤓 User-Input<a class="anchor-link" href="#user-input">¶</a></h2><p>Der User-Input ist ein wichtiger Bestandteil der Programmierung. Er ermöglicht es, dass der Benutzer mit dem Programm interagieren kann. In Python können wir den User-Input mit der Funktion <code>input()</code> erhalten. Die Funktion <code>input()</code> gibt den User-Input als String zurück.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-35">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">the_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Please enter a number: "</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The input is: "</span> <span class="o">+</span> <span class="n">the_input</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-35">the_input = input("Please enter a number: ")
+
+print("The input is: " + the_input)
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>The input is: 
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Verbunden mit einer <code>while</code>-Schleife können wir den User-Input so lange abfragen, bis der User das Programm beendet (indem sie z.B. <code>q</code> eingibt). Dazu können wir eine <code>if</code>-Bedingung nutzen, die den User-Input auf eine bestimmte Zeichenkette prüft.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-36">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">the_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Please enter a number or `q` to quit: "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">the_input</span> <span class="o">==</span> <span class="s2">"q"</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"The input is: "</span> <span class="o">+</span> <span class="n">the_input</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-36">while True:
+    the_input = input("Please enter a number or `q` to quit: ")
+    if the_input == "q":
+        break
+    else:
+        print("The input is: " + the_input)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Stellen Sie sich vor, Sie möchten ein Programm schreiben, um möglichst bequem zu speichern, wie oft Ihnen ein bestimmtes Tier begegnet. Sie könnten das Programm so schreiben, dass es den User für jedes Tier einen Buchstaben eingeben lässt. Wenn der User <code>q</code> eingibt, beendet das Programm und gibt die Häufigkeit der Tiere aus.</p>
+<p>Das Programm soll dann für jeden Buchstaben die Zahl, wie oft dieser schon eingegeben wurde in einem Dictionary speichern. Wenn der Buchstabe schon im Dictionary vorhanden ist, soll der Wert um 1 erhöht werden. Wenn der Buchstabe noch nicht im Dictionary vorhanden ist, soll der Buchstabe als Schlüssel hinzugefügt und der Wert auf 1 gesetzt werden.</p>
+<p>Nach einer Eingabe soll das Dictionary ausgegeben werden. Wenn der User <code>q</code> eingibt, soll das Programm beendet werden. Im besten Fall erfolgt die Ausgabe sortiert nach den Häufigkeiten.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -2475,7 +2735,7 @@ print(codons_dict)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-33">
+<clipboard-copy for="cell-37">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2487,7 +2747,7 @@ print(codons_dict)</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-33"></div>
+<div class="clipboard-copy-txt" id="cell-37"></div>
 </div>
 </div>
 </div>
