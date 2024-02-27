@@ -2159,16 +2159,24 @@ Ebenso ist ein Internet-Link ein absoluter Pfad.</p>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># In diesem Fall wollen wir nur lesen, also `r`</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"data/ls_orchid.fasta"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Lade Datei von github auf den Server</span>
+<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jhumci</span><span class="o">/</span><span class="mi">2024</span><span class="n">_SoSe_BioInformatik</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">ls_orchid</span><span class="o">.</span><span class="n">fasta</span>
+
+
+<span class="c1"># In diesem Fall wollen wir nur lesen, also `r`</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"ls_orchid.fasta"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
     <span class="c1"># Wir könnten den Inhalte nun als String verwenden</span>
     <span class="n">var</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-30"># In diesem Fall wollen wir nur lesen, also `r`
-with open("data/ls_orchid.fasta", "r") as file:
+<div class="clipboard-copy-txt" id="cell-30"># Lade Datei von github auf den Server
+!wget https://github.com/jhumci/2024_SoSe_BioInformatik/blob/main/docs/data/ls_orchid.fasta
+
+
+# In diesem Fall wollen wir nur lesen, also `r`
+with open("ls_orchid.fasta", "r") as file:
     content = file.read()
 
     # Wir könnten den Inhalte nun als String verwenden
@@ -3424,7 +3432,7 @@ GCAAATGCCCCGGTTGGCCGTTTAGTTGGGCC
 
 <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="c1"># Load the file</span>
-<span class="k">for</span> <span class="n">seq_record</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="sa">r</span><span class="s2">"data/ls_orchid.fasta"</span><span class="p">,</span> <span class="s2">"fasta"</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">seq_record</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="sa">r</span><span class="s2">"ls_orchid.fasta"</span><span class="p">,</span> <span class="s2">"fasta"</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">seq_record</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">seq_record</span><span class="o">.</span><span class="n">seq</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq_record</span><span class="p">))</span>
@@ -3436,7 +3444,7 @@ from Bio import SeqIO
 
 records = []
 # Load the file
-for seq_record in SeqIO.parse(r"data/ls_orchid.fasta", "fasta"):
+for seq_record in SeqIO.parse(r"ls_orchid.fasta", "fasta"):
     print(seq_record.id)
     print(repr(seq_record.seq))
     print(len(seq_record))
