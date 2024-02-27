@@ -7,6 +7,4 @@
 
 ## ToDos
 
--[ ] Aufgabe zu Listen / Blast 
--[ ] Funktionierende Links to Fasta-Files
--[ ] Notebook 4 incl. Projekt
+- [ ] Funktionierende Links to Fasta-Files
