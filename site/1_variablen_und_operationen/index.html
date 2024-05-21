@@ -851,7 +851,7 @@ print(float(var1))</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="aufgabe">✍️ Aufgabe<a class="anchor-link" href="#aufgabe">¶</a></h3><ul>
-<li>Schreiben Sie drei <code>print()</code> Befehle, um sowohl die beiden Variable <code>var1</code>, <code>var2</code>, <code>var3</code> auszugeben. Alle sollen als <code>float</code> angezeigt werden.</li>
+<li>Schreiben Sie drei <code>print()</code> Befehle, um die Variablen <code>var1</code>, <code>var2</code>, <code>var3</code> auszugeben. Alle sollen als <code>float</code> angezeigt werden.</li>
 </ul>
 </div>
 </div>
@@ -1265,7 +1265,7 @@ Der Proteingehalt beträgt:0.55938 KiloDalton
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="aufgabe-proteingehalt-berechnen">✍️ Aufgabe: Proteingehalt berechnen<a class="anchor-link" href="#aufgabe-proteingehalt-berechnen">¶</a></h3><ul>
-<li>Kopieren Sie die Lösung von oben und ergänzen Sie ein Statement, welches prüft, ob der Proteingehalt größer als der Wert in einer Variable <code>threshold = 500</code> Dalton ist und printen Sie das Ergebnis.</li>
+<li>Kopieren Sie die Lösung von oben und ergänzen Sie ein Statement, welches prüft, ob der Proteingehalt größer als der Wert in einer Variable <code>threshold = 500</code> Dalton ist und printen Sie das Ergebnis dieses Statements aus.</li>
 </ul>
 </div>
 </div>
@@ -1380,7 +1380,7 @@ print(protein_content_dalton&gt;threshold)
 <li>Boolsche Variablen können nur zwei Werte annehmen: <code>True</code> oder <code>False</code></li>
 <li>Sie sind der wichtigste Datentyp in der IT und Digitaltechnik, da alle Datentypen und Operationen hierauf zurückgeführt werden können</li>
 <li>Boolsche Variablen können z.B. durch Vergleichsoperatoren erzeugt werden oder direkt deklariert werden</li>
-<li>Oft macht es Sinn die Variable mit einem sinnvollen Namen zu benennen, z.B. <code>is_&lt;&gt;</code>zu benennen, um zu verdeutlichen, dass es sich um einen Wahrheitswert handelt</li>
+<li>Oft macht es Sinn die Variable mit einem sinnvollen Namen zu benennen, z.B. <code>is_&lt;...&gt;</code>zu benennen, um zu verdeutlichen, dass es sich um einen Wahrheitswert handelt</li>
 </ul>
 </div>
 </div>
@@ -1391,7 +1391,7 @@ print(protein_content_dalton&gt;threshold)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-14">
@@ -2315,7 +2315,7 @@ seq_2 : str = "tcg_g"
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-27">
@@ -2331,10 +2331,10 @@ seq_2 : str = "tcg_g"
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }</span>
 
 <span class="n">seq_1</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"ATGGTACGT*CGTACGTCA*TACGTACGTCTA**CGTGGTACGTCGTCTC"</span>
-<span class="n">seq_2</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"tcg_g"</span>
+<span class="n">seq_2</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"cgt_cg"</span>
 
-<span class="n">seq_1</span> <span class="o">=</span> <span class="n">seq_1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">)</span>
-<span class="n">seq_2</span> <span class="o">=</span> <span class="n">seq_2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span>
+<span class="n">seq_1</span> <span class="o">=</span> <span class="n">seq_1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">)</span>
+<span class="n">seq_2</span> <span class="o">=</span> <span class="n">seq_2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">)</span>
 <span class="n">seq_1</span> <span class="o">=</span> <span class="n">seq_1</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="n">seq_2</span> <span class="o">=</span> <span class="n">seq_2</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="n">position</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">seq_1</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">seq_2</span><span class="p">)</span>
@@ -2344,10 +2344,10 @@ seq_2 : str = "tcg_g"
 <div class="clipboard-copy-txt" id="cell-27">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
 
 seq_1 : str = "ATGGTACGT*CGTACGTCA*TACGTACGTCTA**CGTGGTACGTCGTCTC"
-seq_2 : str = "tcg_g"
+seq_2 : str = "cgt_cg"
 
-seq_1 = seq_1.replace("*", "*")
-seq_2 = seq_2.replace("_", "_")
+seq_1 = seq_1.replace("*", "+")
+seq_2 = seq_2.replace("*", "+")
 seq_1 = seq_1.upper()
 seq_2 = seq_2.upper()
 position : int = seq_1.find(seq_2)
@@ -2364,7 +2364,7 @@ print("Found: " + str(position&gt;=0))</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Found: False
+<pre>Found: True
 </pre>
 </div>
 </div>
@@ -2379,10 +2379,10 @@ print("Found: " + str(position&gt;=0))</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="index-und-slice-operatoren">Index- und Slice-Operatoren<a class="anchor-link" href="#index-und-slice-operatoren">¶</a></h3><ul>
-<li>Der Index-Operator <code>[]</code> gibt das Zeichen an einer bestimmten Position in einem String zurück</li>
-<li>Der Slice-Operator <code>[:]</code> gibt eine Teilsequenz eines Strings zurück</li>
+<li>Der Index-Operator <code>[&lt;position&gt;]</code> gibt das Zeichen an einer bestimmten Position (<position> mit Zahl ersetzen) in einem String zurück</position></li>
+<li>Der Slice-Operator <code>[&lt;start&gt;:&lt;end&gt;]</code> gibt eine Teilsequenz eines Strings zurück (die erste Position wird mit <code>0</code> indiziert)</li>
 <li>Der Slice-Operator kann auch mit einem dritten Parameter verwendet werden, um die Schrittweite anzugeben</li>
-<li>Der Index-Operator kann auch mit einem negativen Index verwendet we</li>
+<li>Der Index-Operator kann auch mit einem negativen Index verwendet werden</li>
 </ul>
 </div>
 </div>
@@ -2663,9 +2663,10 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[84], line 1</span>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">seq_1</span> <span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s2">"ATGGTACGT*CGTACGTCA*TACGTACGTCTA**CGTGGTACGTCGTCTC"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-33"></div>
+<div class="clipboard-copy-txt" id="cell-33">seq_1 :str = "ATGGTACGT*CGTACGTCA*TACGTACGTCTA**CGTGGTACGTCGTCTC"
+</div>
 </div>
 </div>
 </div>

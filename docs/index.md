@@ -28,12 +28,13 @@ theme: lemon
 * Nie war er so einfach, wie heute programmieren zu lernen:
     * KI-Programme helfen bei der Fehlersuche
     * KI-Programme antworten auf fragen
-    * KI-Programme schreiben Code (was bedeutet, dass wir uns einen großteil der Vokabel Lernens sparen können)
+    * KI-Programme schreiben Code (was bedeutet, dass wir uns einen Großteil der Vokabel-Lernens sparen können)
 * Investieren Sie ein paar Stunden in die die Grundlagen des Programmierens und Sie werden bis zur KI-Apokalypse gut gerüstet sein
 
 ![](images/robot_apocalypse.png)
 
 ---
+
 
 ## Organisatorisches
 
