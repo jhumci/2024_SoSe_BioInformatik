@@ -768,7 +768,7 @@ print("The maximum expression value is: " + str(expression_max))
 <span class="n">length</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_genes</span><span class="p">)</span>
 <span class="n">expressions_sum</span> <span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">my_expressions</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The mean expression value is : "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The mean expression value is : "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expressions_sum</span><span class="o">/</span><span class="n">length</span><span class="p">))</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-5">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
 
@@ -778,7 +778,7 @@ my_expressions : list[float] = [5.3, 2.7, 0.0, 1.2, 3.8]
 length : int = len(my_genes)
 expressions_sum : float = sum(my_expressions)
 
-print("The mean expression value is : " + str(length))</div>
+print("The mean expression value is : " + str(expressions_sum/length))</div>
 </div>
 </div>
 </div>
