@@ -1215,6 +1215,10 @@ result_handle.close()
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Im Folgenden ziehen wir die Relevanten Informationen aus der XML-Datei</span>
+
+<span class="c1"># Lade Datei von github auf den Server</span>
+<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jhumci</span><span class="o">/</span><span class="mi">2024</span><span class="n">_SoSe_BioInformatik</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">my_blast</span><span class="o">.</span><span class="n">xml</span>
+
 <span class="c1"># open the result file</span>
 <span class="n">result_handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"my_blast.xml"</span><span class="p">)</span>
 
@@ -1228,6 +1232,10 @@ result_handle.close()
 <span class="nb">print</span><span class="p">(</span><span class="n">organism_list</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-13"># Im Folgenden ziehen wir die Relevanten Informationen aus der XML-Datei
+
+# Lade Datei von github auf den Server
+!wget https://raw.githubusercontent.com/jhumci/2024_SoSe_BioInformatik/main/docs/my_blast.xml
+
 # open the result file
 result_handle = open("my_blast.xml")
 

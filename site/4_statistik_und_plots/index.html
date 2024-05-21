@@ -608,8 +608,10 @@ Adelie,Biscoe,55.7,16.6,226.0,5388.0,female,fish,adult,overweight,2021
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Da wird pandas öfter verwendet, deshalb importieren wir es hier mit einer Abkürzung pd</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
+<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jhumci</span><span class="o">/</span><span class="mi">2024</span><span class="n">_SoSe_BioInformatik</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">palmerpenguins_extended</span><span class="o">.</span><span class="n">csv</span>
+
 <span class="c1"># Hier lesen wir die Daten ein</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/palmerpenguins_extended.csv'</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'palmerpenguins_extended.csv'</span><span class="p">)</span>
 
 <span class="c1"># Hier schauen wir uns die ersten 5 Zeilen an</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -617,8 +619,10 @@ Adelie,Biscoe,55.7,16.6,226.0,5388.0,female,fish,adult,overweight,2021
 <div class="clipboard-copy-txt" id="cell-1"># Da wird pandas öfter verwendet, deshalb importieren wir es hier mit einer Abkürzung pd
 import pandas as pd
 
+!wget https://github.com/jhumci/2024_SoSe_BioInformatik/blob/main/docs/data/palmerpenguins_extended.csv
+
 # Hier lesen wir die Daten ein
-df = pd.read_csv('data/palmerpenguins_extended.csv')
+df = pd.read_csv('palmerpenguins_extended.csv')
 
 # Hier schauen wir uns die ersten 5 Zeilen an
 df.head()</div>
@@ -3129,7 +3133,7 @@ How can I Read this into a Pandas Dataframe? And how can I filter the data only 
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Im Paper <a href="https://www.sciencedirect.com/science/article/pii/S2352340919313174#bib1">Reshetnikov, Evgeny, et al. "Dataset of allele and genotype frequencies of five polymorphisms candidate genes analyzed for association with body mass index in Russian women." Data in brief 28 (2020): 104962.</a> wurden Daten von Gewicht und Körpergröße von Frauen in Russland untersucht. Daneben sind auch genetische Daten (Allelfrequenzen) von fünf Polymorphismen in Kandidatengenen für die Assoziation mit dem Body-Mass-Index (BMI) enthalten. Jedes Gen wird durch eine Spalte repräsentiert, die den Single Nucleotide Polymorphism mit seiner Bezeichnung enthält. Die Werte in den Spalten sind die Allele, die in den Probanden gefunden wurden.</p>
 <ol>
-<li>Lesen Sie die Daten (<code>data/genes_body_weight.csv</code>) in ein Pandas-Dataframe ein. (10%)</li>
+<li>Lesen Sie die Daten (<a href="https://github.com/jhumci/2024_SoSe_BioInformatik/blob/main/docs/data/genes_body_weight.csv"><code>genes_body_weight.csv</code></a>) in ein Pandas-Dataframe ein. (10%)</li>
 <li>Beschreiben Sie das Sample, indem Sie die statistischen Kennzahlen berechnen damit ein Leser sich einen Eindruck über die Daten machen kann. (20%)<ul>
 <li>Wie groß ist das Sample?</li>
 <li>Welche Variablen sind enthalten?</li>
@@ -3152,13 +3156,71 @@ How can I Read this into a Pandas Dataframe? And how can I filter the data only 
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-20">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jhumci</span><span class="o">/</span><span class="mi">2024</span><span class="n">_SoSe_BioInformatik</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">genes_body_weight</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-20">!wget https://raw.githubusercontent.com/jhumci/2024_SoSe_BioInformatik/main/docs/data/genes_body_weight.csv</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Der Befehl "wget" ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-21">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-21"></div>
+</div>
+</div>
 </div>
 </div>
 </div>
