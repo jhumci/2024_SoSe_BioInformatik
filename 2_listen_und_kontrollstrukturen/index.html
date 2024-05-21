@@ -732,9 +732,10 @@ print("The maximum expression value is: " + str(expression_max))
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">my_expressions</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.3</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4"></div>
+<div class="clipboard-copy-txt" id="cell-4">my_expressions : list[float] = [5.3, 2.7, 0.0, 1.2, 3.8]
+</div>
 </div>
 </div>
 </div>
@@ -1510,6 +1511,7 @@ organism_list.count("Pinus")</div>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="schleifen">Schleifen<a class="anchor-link" href="#schleifen">¶</a></h2><p>Schleifen sind ein grundlegendes Konzept in der Programmierung. Sie erlauben es, eine Operation mehrmals auszuführen. In Python gibt es zwei Arten von Schleifen: <code>for</code> und <code>while</code>.</p>
 <p>Meistens wird die <code>for</code>-Schleife verwendet, wenn Sie über eine Liste oder einen Strings iterieren. Die <code>for</code>-Schleife wird durch das Schlüsselwort <code>for</code> eingeleitet, gefolgt von einer Variable, die den Wert des aktuellen Elements der Liste enthält, gefolgt von dem Schlüsselwort <code>in</code>, gefolgt von der Liste, über die iteriert werden soll, gefolgt von einem Doppelpunkt. Der Code, der in der Schleife ausgeführt werden soll, wird eingerückt.</p>
+<p><img alt="" src="https://raw.githubusercontent.com/jhumci/2024_SoSe_BioInformatik/main/docs/images/loop_act.png"/></p>
 </div>
 </div>
 </div>
@@ -1808,6 +1810,12 @@ print(counter)</div>
 <h3 id="aufgabe-normalsierung-der-expressionswerte">✍️ Aufgabe: Normalsierung der Expressionswerte<a class="anchor-link" href="#aufgabe-normalsierung-der-expressionswerte">¶</a></h3><p>Bei der Auswertung von Expressionswerten ist es oft sinnvoll die Werte zu normieren, da die Expression Reads sich in völlig verschiedenen Größenordnungen bewegen können. Eine Möglichkeit ist es, die Werte auf den Bereich von 0 bis 1 zu normieren.
 Normieren Sie die Werte in einer neuen Liste <code>normalized_values</code> und geben Sie die normierten Werte aus.</p>
 <p>Nutzen Sie hierzu die Formel $x_{\text{norm}} = \frac{x - \min(x)}{\max(x) - \min(x)}$.</p>
+<p>Hinweise:</p>
+<ul>
+<li>Nutzen Sie die Funktionen <code>min()</code> und <code>max()</code>, um in zwei Variablen das Minimum und Maximum zu speichern.</li>
+<li>Nutzen Sie eine <code>for</code>-Schleife, um über die Werte zu iterieren</li>
+<li>Erstellen Sie eine neue leere Liste <code>normalized_values = []</code> und fügen Sie die normierten Werte mittels <code>append()</code> hinzu.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1938,6 +1946,7 @@ print(normalized_values)</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Ein gutes Beispiel ist die Suche nach einem bestimmten Element in einer Liste. Dazu können wir eine Schleife nutzen, die über die Liste iteriert und dann mit einer Bedingung prüft, ob das Element gefunden wurde. Der von uns bisher verfasste Code ist nur begrenzt lesebar. Wir ihn auch mit einer <code>if</code>-Bedingung umschreiben.</p>
+<p><img alt="" src="https://github.com/jhumci/2024_SoSe_BioInformatik/blob/main/docs/images/loop_condition.png?raw=true"/></p>
 </div>
 </div>
 </div>
