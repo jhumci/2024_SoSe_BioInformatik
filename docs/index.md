@@ -80,7 +80,7 @@ theme: lemon
 #### Ohne Google Account
 
 - Unter folgenden Link können Sie die Notebooks ebenfalls ausführen. Allerdings gibt es hier keine komfortable Möglichkeit Ihre Ergebnisse zu speichern
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jhumci/2024_SoSe_BioInformatik/tree/main/docs/HEAD) 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jhumci/2024_SoSe_BioInformatik/HEAD) und öffnen Sie das gewünschte Notebook unter `/docs`
 - Alternativ können Sie die Notebooks lokal ausführen indem Sie das Paket [Anaconda](https://www.youtube.com/watch?v=h1sAzPojKMg) installieren
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jhumci/2024_SoSe_BioInformatik/tree/main/docs)
 
