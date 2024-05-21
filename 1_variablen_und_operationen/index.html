@@ -2315,7 +2315,7 @@ seq_2 : str = "tcg_g"
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-27">
@@ -2331,10 +2331,10 @@ seq_2 : str = "tcg_g"
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }</span>
 
 <span class="n">seq_1</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"ATGGTACGT*CGTACGTCA*TACGTACGTCTA**CGTGGTACGTCGTCTC"</span>
-<span class="n">seq_2</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"tcg_g"</span>
+<span class="n">seq_2</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"cgt_cg"</span>
 
-<span class="n">seq_1</span> <span class="o">=</span> <span class="n">seq_1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">)</span>
-<span class="n">seq_2</span> <span class="o">=</span> <span class="n">seq_2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span>
+<span class="n">seq_1</span> <span class="o">=</span> <span class="n">seq_1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">)</span>
+<span class="n">seq_2</span> <span class="o">=</span> <span class="n">seq_2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">)</span>
 <span class="n">seq_1</span> <span class="o">=</span> <span class="n">seq_1</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="n">seq_2</span> <span class="o">=</span> <span class="n">seq_2</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="n">position</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">seq_1</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">seq_2</span><span class="p">)</span>
@@ -2344,10 +2344,10 @@ seq_2 : str = "tcg_g"
 <div class="clipboard-copy-txt" id="cell-27">#@title ❓ Click `Show code` in the code cell to show the solution. { display-mode: "form" }
 
 seq_1 : str = "ATGGTACGT*CGTACGTCA*TACGTACGTCTA**CGTGGTACGTCGTCTC"
-seq_2 : str = "tcg_g"
+seq_2 : str = "cgt_cg"
 
-seq_1 = seq_1.replace("*", "*")
-seq_2 = seq_2.replace("_", "_")
+seq_1 = seq_1.replace("*", "+")
+seq_2 = seq_2.replace("*", "+")
 seq_1 = seq_1.upper()
 seq_2 = seq_2.upper()
 position : int = seq_1.find(seq_2)
@@ -2364,7 +2364,7 @@ print("Found: " + str(position&gt;=0))</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Found: False
+<pre>Found: True
 </pre>
 </div>
 </div>
