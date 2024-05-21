@@ -2115,11 +2115,15 @@ CGTAAC-CAGGTTTCCGTAGGTGAACCTGCGG-CAGGATCATTGTTGAGAC-AGCAGAATATATGATCGAGTG
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Wir beschreiben den Dateipfad relativ zum Arbeitsverzeichnis und dass with in die Datei schreiben wollen `w`</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">mkdir</span> <span class="n">data</span>
+
+<span class="c1"># Wir beschreiben den Dateipfad relativ zum Arbeitsverzeichnis und dass with in die Datei schreiben wollen `w`</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"data/my_file.txt"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"in Arbeitsverzeichnis/data"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-29"># Wir beschreiben den Dateipfad relativ zum Arbeitsverzeichnis und dass with in die Datei schreiben wollen `w`
+<div class="clipboard-copy-txt" id="cell-29">!mkdir data
+
+# Wir beschreiben den Dateipfad relativ zum Arbeitsverzeichnis und dass with in die Datei schreiben wollen `w`
 with open("data/my_file.txt", "w") as file:
     file.write("in Arbeitsverzeichnis/data")
 </div>
