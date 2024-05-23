@@ -1309,7 +1309,7 @@ print(math.sin(pi/2))</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-14">
@@ -1325,14 +1325,18 @@ print(math.sin(pi/2))</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span> <span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">area</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-14">import math
 
 def circle_area(radius : float) -&gt; float:
-    return math.pi * radius ** 2
+
+    area = math.pi * math.pow(radius,2)
+    return area
 
 print(circle_area(5))</div>
 </div>
@@ -1762,7 +1766,7 @@ print(coding_strand)</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h5 id="aufgabe-sequenzanalyse-i">✍️ Aufgabe: Sequenzanalyse I<a class="anchor-link" href="#aufgabe-sequenzanalyse-i">¶</a></h5><p>Gegeben sich die folgenden zwei DNA-Sequenzen von verschiedenen Orchideen-Arten. Berechnen das Alignment der beiden Sequenzen und die Anzahl der Vorkommen des Stopp-Codons <code>TAA</code> in beiden Sequenzen.</p>
-<p>Wandeln Sie die Sequenzen in <code>Seq</code>-Objekte um und verwenden Sie die Funktionen des Moduls <code>biopython</code> um das Alignment und die Anzahl der möglichen Stopp-Codons <code>TAA</code> (unabhängig vom Reading Frame) zu berechnen.</p>
+<p>Wandeln Sie die Sequenzen in <code>Seq</code>-Objekte um und verwenden Sie die Funktionen des Moduls <code>biopython</code> um das Alignment und die Anzahl der möglichen Stopp-Codons <code>TAA</code> (unabhängig vom Reading Frame) zu berechnen. Zählen Sie zunächt die Anzahl der Vorkommen des Stopp-Codons in beiden Sequenzen. Das Alignment wird in der nächsten Aufgabe berechnet.</p>
 </div>
 </div>
 </div>
@@ -2096,13 +2100,13 @@ CGTAAC-CAGGTTTCCGTAGGTGAACCTGCGG-CAGGATCATTGTTGAGAC-AGCAGAATATATGATCGAGTG
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-29">
@@ -2127,6 +2131,19 @@ CGTAAC-CAGGTTTCCGTAGGTGAACCTGCGG-CAGGATCATTGTTGAGAC-AGCAGAATATATGATCGAGTG
 with open("data/my_file.txt", "w") as file:
     file.write("in Arbeitsverzeichnis/data")
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Ein Unterverzeichnis oder eine Datei mit dem Namen "data" existiert bereits.
+</pre>
 </div>
 </div>
 </div>
